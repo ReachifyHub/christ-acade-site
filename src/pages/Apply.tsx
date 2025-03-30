@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -881,3 +882,12 @@ const Apply = () => {
               </li>
               <li>All fields marked with an asterisk (*) are required.</li>
               <li>For questions about the application process, please contact our Admissions Office at (123) 456-7891.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Apply;
