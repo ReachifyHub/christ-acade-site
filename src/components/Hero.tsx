@@ -10,6 +10,7 @@ interface HeroProps {
   image: string;
   buttonText?: string;
   buttonLink?: string;
+  buttonOnClick?: () => void;
   children?: ReactNode;
   overlay?: boolean;
   small?: boolean;
@@ -22,6 +23,7 @@ const Hero = ({
   image,
   buttonText,
   buttonLink,
+  buttonOnClick,
   children,
   overlay = true,
   small = false,
@@ -51,9 +53,14 @@ const Hero = ({
             </p>
           )}
           
-          {buttonText && buttonLink && (
-            <Button asChild size="lg" className="bg-school-secondary hover:bg-school-secondary/90 text-white animate-fade-in">
-              <Link to={buttonLink}>{buttonText}</Link>
+          {buttonText && (buttonLink || buttonOnClick) && (
+            <Button 
+              size="lg" 
+              className="bg-school-secondary hover:bg-school-secondary/90 text-white animate-fade-in"
+              onClick={buttonOnClick}
+              asChild={buttonLink ? true : false}
+            >
+              {buttonLink ? <Link to={buttonLink}>{buttonText}</Link> : <span>{buttonText}</span>}
             </Button>
           )}
 
