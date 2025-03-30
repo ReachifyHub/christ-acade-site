@@ -16,6 +16,7 @@ import News from "./pages/News";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Apply from "./pages/Apply";
+import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,6 +38,7 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/apply" element={<Apply />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
