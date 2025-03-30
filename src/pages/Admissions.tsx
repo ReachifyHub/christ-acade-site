@@ -1,15 +1,29 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CalendarDays, CheckCircle, Clock, FileText, HelpCircle, Medal } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import SectionTitle from "@/components/SectionTitle";
 import Hero from "@/components/Hero";
 
 const Admissions = () => {
+  const navigate = useNavigate();
+  
+  const handleApplyNow = () => {
+    // Check if user is authenticated
+    const user = localStorage.getItem("user");
+    
+    if (user) {
+      // If user is logged in, navigate directly to the application form
+      navigate("/apply");
+    } else {
+      // If user is not logged in, navigate to login with return URL
+      navigate("/login", { state: { returnUrl: "/apply" } });
+    }
+  };
+
   return (
     <div>
       <Hero
@@ -18,7 +32,8 @@ const Admissions = () => {
         description="We welcome students who are eager to learn, grow, and contribute to our school community. Our admissions process is designed to ensure a good fit between your child and our educational philosophy."
         image="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
         buttonText="Apply Now"
-        buttonLink="/apply"
+        buttonLink="#"
+        buttonOnClick={handleApplyNow}
         small={true}
       />
 
@@ -65,8 +80,8 @@ const Admissions = () => {
                     <p className="text-gray-600 mb-4">
                       Complete and submit the online application form along with the required documents and application fee. This typically includes academic records, recommendation letters, and more.
                     </p>
-                    <Button asChild variant="outline" size="sm">
-                      <Link to="/apply">Start Application</Link>
+                    <Button variant="outline" size="sm" onClick={handleApplyNow}>
+                      Start Application
                     </Button>
                   </div>
                 </div>
