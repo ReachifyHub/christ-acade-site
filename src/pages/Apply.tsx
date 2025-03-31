@@ -39,13 +39,12 @@ const Apply = () => {
     address: "",
     city: "",
     state: "",
-    zipCode: "",
-    country: "",
+    lga: "", // Added Local Government Area
     
     // Academic Information
-    gradeApplying: "",
+    classApplying: "", // Changed from gradeApplying to classApplying
     currentSchool: "",
-    currentGrade: "",
+    currentClass: "", // Changed from currentGrade to currentClass
     schoolAddress: "",
     yearsAttended: "",
     reasonForLeaving: "",
@@ -113,7 +112,7 @@ const Apply = () => {
           id: Date.now().toString(),
           studentName: `${formData.firstName} ${formData.lastName}`,
           email: formData.email,
-          gradeApplying: formData.gradeApplying,
+          classApplying: formData.classApplying, // Changed from gradeApplying to classApplying
           submittedAt: new Date().toISOString(),
           status: "Pending",
           formData: { ...formData }

@@ -79,7 +79,7 @@ const Admissions = () => {
                   <div className="flex-1 order-3 md:pl-12">
                     <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Application Submission</h3>
                     <p className="text-gray-600 mb-4">
-                      Complete and submit the online application form along with the required documents.
+                      Complete and submit the online application form along with the required documents, including academic records from previous schools.
                     </p>
                     <Button variant="outline" size="sm" onClick={handleApplyNow}>
                       Start Application
@@ -92,12 +92,12 @@ const Admissions = () => {
               <div className="relative mb-12">
                 <div className="flex flex-col md:flex-row items-start">
                   <div className="flex-1 order-2 md:order-1 md:text-right md:pr-12">
-                    <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Student Assessment</h3>
+                    <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Entrance Examination</h3>
                     <p className="text-gray-600 mb-4">
-                      Potential students participate in age-appropriate assessments to help us understand their academic abilities, learning style, and social development.
+                      Potential students take our entrance examination, which assesses their readiness for our academic program in line with Nigerian educational standards. The test covers Mathematics, English, and Basic Science.
                     </p>
                     <Button asChild variant="outline" size="sm" className="mb-4 md:mb-0">
-                      <Link to="/assessment-details">Assessment Details</Link>
+                      <Link to="/assessment-details">Examination Details</Link>
                     </Button>
                   </div>
                   <div className="z-10 flex items-center justify-center w-12 h-12 rounded-full bg-school-primary text-white mb-4 md:mb-0 md:mx-4">
@@ -117,7 +117,7 @@ const Admissions = () => {
                   <div className="flex-1 order-3 md:pl-12">
                     <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Family Interview</h3>
                     <p className="text-gray-600 mb-4">
-                      Both parents and the student meet with our admissions team to discuss educational goals, family values, and how our school can meet your child's needs.
+                      Both parents/guardians and the student meet with our admissions team to discuss educational goals, family values, and how our school can meet your child's needs.
                     </p>
                   </div>
                 </div>
@@ -207,21 +207,21 @@ const Admissions = () => {
                   <FileText className="w-5 h-5 text-school-secondary mr-3 flex-shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold text-school-primary">Academic Records</h4>
-                    <p className="text-gray-600 text-sm">Last 2-3 years of school reports/transcripts</p>
+                    <p className="text-gray-600 text-sm">Last 3 terms of school reports/result sheets</p>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <FileText className="w-5 h-5 text-school-secondary mr-3 flex-shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold text-school-primary">Teacher Recommendations</h4>
-                    <p className="text-gray-600 text-sm">From current Math and English teachers</p>
+                    <p className="text-gray-600 text-sm">From current Mathematics and English teachers</p>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <FileText className="w-5 h-5 text-school-secondary mr-3 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-semibold text-school-primary">Standardized Test Scores</h4>
-                    <p className="text-gray-600 text-sm">If applicable to your child's grade level</p>
+                    <h4 className="font-semibold text-school-primary">BECE/NECO/WAEC Results</h4>
+                    <p className="text-gray-600 text-sm">For Senior Secondary School applicants</p>
                   </div>
                 </li>
                 <li className="flex items-start">
@@ -270,8 +270,17 @@ const Admissions = () => {
                     <CalendarDays className="w-6 h-6 text-school-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-school-primary">October 1, 2023</h4>
-                    <p className="text-gray-600">Applications Open for All Grade Levels</p>
+                    <h4 className="font-semibold text-school-primary">September 1, 2023</h4>
+                    <p className="text-gray-600">Applications Open for All Class Levels</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="bg-school-accent p-3 rounded-lg mr-4 flex-shrink-0">
+                    <CalendarDays className="w-6 h-6 text-school-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-school-primary">November 30, 2023</h4>
+                    <p className="text-gray-600">Priority Application Deadline (First Batch)</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -280,7 +289,7 @@ const Admissions = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-school-primary">December 15, 2023</h4>
-                    <p className="text-gray-600">Priority Application Deadline (Early Decision)</p>
+                    <p className="text-gray-600">First Batch Entrance Examination</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -289,16 +298,7 @@ const Admissions = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-school-primary">January 15, 2024</h4>
-                    <p className="text-gray-600">Early Decision Notifications</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="bg-school-accent p-3 rounded-lg mr-4 flex-shrink-0">
-                    <CalendarDays className="w-6 h-6 text-school-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-school-primary">February 15, 2024</h4>
-                    <p className="text-gray-600">Regular Application Deadline</p>
+                    <p className="text-gray-600">First Batch Admission Notifications</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -307,7 +307,7 @@ const Admissions = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-school-primary">March 15, 2024</h4>
-                    <p className="text-gray-600">Regular Decision Notifications</p>
+                    <p className="text-gray-600">Second Batch Application Deadline</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -316,7 +316,7 @@ const Admissions = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-school-primary">April 15, 2024</h4>
-                    <p className="text-gray-600">Enrollment Contracts & Deposits Due</p>
+                    <p className="text-gray-600">Acceptance of Admission & Payment of Fees Due</p>
                   </div>
                 </div>
               </div>
@@ -326,7 +326,7 @@ const Admissions = () => {
                   <p className="font-medium">Rolling Admissions</p>
                 </div>
                 <p className="text-gray-600 mt-2">
-                  After February 15, applications are considered on a rolling basis as space allows. We encourage early application as some grade levels fill quickly.
+                  After March 15, applications are considered on a rolling basis as space allows. We encourage early application as some class levels fill quickly.
                 </p>
               </div>
             </div>
@@ -354,16 +354,16 @@ const Admissions = () => {
                     <div className="border-b border-gray-200 pb-4">
                       <h4 className="font-semibold text-school-primary mb-2">2023-2024 Annual Tuition</h4>
                       <div className="flex justify-between">
-                        <span>Elementary School (K-5):</span>
-                        <span className="font-medium">₦950,000</span>
+                        <span>Primary School (Primary 1-6):</span>
+                        <span className="font-medium">₦350,000</span>
                       </div>
                       <div className="flex justify-between">
-                        <span>Middle School (6-8):</span>
-                        <span className="font-medium">₦1,100,000</span>
+                        <span>Junior Secondary (JSS 1-3):</span>
+                        <span className="font-medium">₦450,000</span>
                       </div>
                       <div className="flex justify-between">
-                        <span>High School (9-12):</span>
-                        <span className="font-medium">₦1,250,000</span>
+                        <span>Senior Secondary (SSS 1-3):</span>
+                        <span className="font-medium">₦550,000</span>
                       </div>
                     </div>
                     <div className="border-b border-gray-200 pb-4">
@@ -373,28 +373,28 @@ const Admissions = () => {
                         <span className="font-medium">₦10,000</span>
                       </div>
                       <div className="flex justify-between">
-                        <span>Enrollment Fee (one-time):</span>
-                        <span className="font-medium">₦100,000</span>
+                        <span>Admission Fee (one-time):</span>
+                        <span className="font-medium">₦50,000</span>
                       </div>
                     </div>
                     <div>
                       <h4 className="font-semibold text-school-primary mb-2">Additional Fees</h4>
                       <div className="flex justify-between">
-                        <span>Technology Fee:</span>
+                        <span>Books and Supplies:</span>
                         <span className="font-medium">₦35,000</span>
                       </div>
                       <div className="flex justify-between">
-                        <span>Activity Fee:</span>
-                        <span className="font-medium">₦20,000</span>
+                        <span>Uniform:</span>
+                        <span className="font-medium">₦25,000</span>
                       </div>
                       <div className="flex justify-between">
-                        <span>Extended Day Program:</span>
-                        <span className="font-medium">Varies</span>
+                        <span>Development Levy:</span>
+                        <span className="font-medium">₦15,000</span>
                       </div>
                     </div>
                   </div>
                   <p className="text-sm text-gray-500 italic mb-4">
-                    * Tuition can be paid annually, semi-annually, or in 10 monthly installments through our tuition management system.
+                    * Tuition can be paid per term or annually. A 5% discount is available for full annual payment.
                   </p>
                   <Button asChild>
                     <Link to="/tuition-details">View Full Tuition Details</Link>
@@ -406,28 +406,28 @@ const Admissions = () => {
             {/* Financial Aid */}
             <div>
               <SectionTitle
-                title="Financial Aid"
-                subtitle="Making Education Accessible"
+                title="Scholarships"
+                subtitle="Rewarding Excellence"
                 alignment="left"
               />
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <div className="p-6">
                   <p className="text-gray-600 mb-6">
-                    Christ Acade is committed to making our education accessible to qualified students from diverse socioeconomic backgrounds. Our financial aid program assists families who demonstrate financial need.
+                    Christ Acade is committed to making our education accessible to qualified students who demonstrate exceptional academic performance, character, and leadership potential.
                   </p>
                   <div className="space-y-4 mb-6">
                     <div className="flex items-start">
                       <Medal className="w-5 h-5 text-school-secondary mr-3 mt-1" />
                       <div>
-                        <h4 className="font-semibold text-school-primary">Merit Scholarships</h4>
-                        <p className="text-gray-600">Available to new and returning students who demonstrate exceptional academic achievement, leadership, or talent in specific areas.</p>
+                        <h4 className="font-semibold text-school-primary">Academic Merit Scholarships</h4>
+                        <p className="text-gray-600">Available to students who score above 90% in our entrance examination and have outstanding academic records from their previous schools.</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <Medal className="w-5 h-5 text-school-secondary mr-3 mt-1" />
                       <div>
-                        <h4 className="font-semibold text-school-primary">Need-Based Financial Aid</h4>
-                        <p className="text-gray-600">Awarded based on family financial circumstances and available funds. Families must complete a financial aid application.</p>
+                        <h4 className="font-semibold text-school-primary">Sports Scholarships</h4>
+                        <p className="text-gray-600">Awarded to students who demonstrate exceptional talent in sports and can represent the school in state and national competitions.</p>
                       </div>
                     </div>
                     <div className="flex items-start">
@@ -441,17 +441,17 @@ const Admissions = () => {
                   <div className="bg-gray-50 p-4 rounded-lg mb-6">
                     <div className="flex items-center mb-2">
                       <HelpCircle className="w-5 h-5 text-school-primary mr-2" />
-                      <h4 className="font-semibold text-school-primary">How to Apply for Financial Aid</h4>
+                      <h4 className="font-semibold text-school-primary">How to Apply for Scholarships</h4>
                     </div>
                     <ol className="list-decimal pl-5 text-gray-600 space-y-1">
-                      <li>Complete the admissions application</li>
-                      <li>Submit the financial aid application through FACTS</li>
-                      <li>Provide required financial documentation</li>
-                      <li>Financial aid decisions are made separately from admissions decisions</li>
+                      <li>Complete the regular admissions application</li>
+                      <li>Submit the scholarship application form</li>
+                      <li>Provide supporting documents (academic records, certificates, recommendation letters)</li>
+                      <li>Attend a scholarship interview if shortlisted</li>
                     </ol>
                   </div>
                   <Button asChild>
-                    <Link to="/financial-aid">Financial Aid Details</Link>
+                    <Link to="/scholarships">Scholarship Details</Link>
                   </Button>
                 </div>
               </div>
@@ -471,19 +471,19 @@ const Admissions = () => {
             <div className="bg-white rounded-lg shadow-md p-6">
               <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">When should we apply?</h3>
               <p className="text-gray-600">
-                We recommend applying as early as possible, as some grade levels fill quickly. Our priority application deadline is December 15, with regular applications due by February 15. After these dates, we accept applications on a rolling basis as space allows.
+                We recommend applying as early as possible, as some class levels fill quickly. Our priority application deadline for the first batch is November 30, with second batch applications due by March 15. After these dates, we accept applications on a rolling basis as space allows.
               </p>
             </div>
             <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">What age must my child be to enter Kindergarten?</h3>
+              <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">What age must my child be to enter Primary 1?</h3>
               <p className="text-gray-600">
-                Children must be 5 years old by September 1 of the academic year they are entering Kindergarten. We do consider developmental readiness alongside chronological age.
+                Children must be 5-6 years old by September 1 of the academic year they are entering Primary 1. We do consider developmental readiness alongside chronological age.
               </p>
             </div>
             <div className="bg-white rounded-lg shadow-md p-6">
               <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">How do you make admissions decisions?</h3>
               <p className="text-gray-600">
-                We take a holistic approach to admissions, considering academic records, assessment results, teacher recommendations, family interviews, and how well the student's needs align with our educational program. We seek students who will thrive in our environment and contribute positively to our community.
+                We take a holistic approach to admissions, considering entrance examination results, academic records, teacher recommendations, family interviews, and how well the student's needs align with our educational program. We seek students who will thrive in our environment and contribute positively to our community.
               </p>
             </div>
             <div className="bg-white rounded-lg shadow-md p-6">
@@ -493,9 +493,9 @@ const Admissions = () => {
               </p>
             </div>
             <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Is financial aid available for new students?</h3>
+              <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Does the school follow the Nigerian curriculum?</h3>
               <p className="text-gray-600">
-                Yes, financial aid is available for both new and returning students who demonstrate financial need. Aid is awarded based on available funds and family circumstances. Financial aid decisions are made separately from admissions decisions.
+                Yes, we follow the Nigerian National Curriculum as prescribed by the Federal Ministry of Education. Our students take the BECE at the end of JSS3 and WAEC/NECO examinations at the end of SSS3. We also supplement with additional resources to enhance learning outcomes.
               </p>
             </div>
             <div className="text-center mt-8">
@@ -525,8 +525,8 @@ const Admissions = () => {
                   </div>
                   <div>
                     <h3 className="font-medium">Email</h3>
-                    <a href="mailto:admissions@christacade.edu" className="text-white/80 hover:text-white transition-colors">
-                      admissions@christacade.edu
+                    <a href="mailto:christacadegroupofschool@gmail.com" className="text-white/80 hover:text-white transition-colors">
+                      christacadegroupofschool@gmail.com
                     </a>
                   </div>
                 </div>
@@ -536,8 +536,8 @@ const Admissions = () => {
                   </div>
                   <div>
                     <h3 className="font-medium">Phone</h3>
-                    <a href="tel:+1234567890" className="text-white/80 hover:text-white transition-colors">
-                      (123) 456-7890
+                    <a href="tel:+2348102473418" className="text-white/80 hover:text-white transition-colors">
+                      +234 810 247 3418
                     </a>
                   </div>
                 </div>
