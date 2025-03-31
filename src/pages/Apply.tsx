@@ -307,12 +307,33 @@ const Apply = () => {
               </div>
               
               <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-                <div className="px-6 pt-6">
-                  <TabsList className="grid grid-cols-4 w-full">
-                    <TabsTrigger value="personal">Personal Info</TabsTrigger>
-                    <TabsTrigger value="academic">Academic Info</TabsTrigger>
-                    <TabsTrigger value="parent">Parent/Guardian</TabsTrigger>
-                    <TabsTrigger value="additional">Additional Info</TabsTrigger>
+                {/* Improved responsive tab navigation */}
+                <div className="px-4 sm:px-6 pt-6">
+                  <TabsList className="w-full grid grid-cols-2 sm:grid-cols-4 gap-1">
+                    <TabsTrigger 
+                      value="personal"
+                      className="text-xs sm:text-sm px-1 sm:px-3 py-2 whitespace-normal h-auto min-h-[40px] text-center"
+                    >
+                      Personal Info
+                    </TabsTrigger>
+                    <TabsTrigger 
+                      value="academic"
+                      className="text-xs sm:text-sm px-1 sm:px-3 py-2 whitespace-normal h-auto min-h-[40px] text-center"
+                    >
+                      Academic Info
+                    </TabsTrigger>
+                    <TabsTrigger 
+                      value="parent"
+                      className="text-xs sm:text-sm px-1 sm:px-3 py-2 whitespace-normal h-auto min-h-[40px] text-center"
+                    >
+                      Parent/Guardian
+                    </TabsTrigger>
+                    <TabsTrigger 
+                      value="additional"
+                      className="text-xs sm:text-sm px-1 sm:px-3 py-2 whitespace-normal h-auto min-h-[40px] text-center"
+                    >
+                      Additional Info
+                    </TabsTrigger>
                   </TabsList>
                 </div>
                 
@@ -881,7 +902,7 @@ const Apply = () => {
                 </ul>
               </li>
               <li>All fields marked with an asterisk (*) are required.</li>
-              <li>For questions about the application process, please contact our Admissions Office at (123) 456-7891.</li>
+              <li>For questions about the application process, please contact our Admissions Office at +234 810 247 3418.</li>
             </ul>
           </div>
         </div>

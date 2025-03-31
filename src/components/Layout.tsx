@@ -17,8 +17,8 @@ const Layout = ({ children }: LayoutProps) => {
     <div className="flex flex-col min-h-screen">
       <Header />
       
-      <main className={`flex-grow ${isMobile ? 'pt-14' : 'pt-16'}`}>
-        <div className="w-full overflow-x-hidden">
+      <main className={`flex-grow ${isMobile ? 'pt-16' : 'pt-16'}`}>
+        <div className="w-full max-w-[100vw] overflow-x-hidden">
           {children}
         </div>
       </main>
