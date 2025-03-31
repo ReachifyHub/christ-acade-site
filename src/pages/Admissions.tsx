@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -78,7 +79,7 @@ const Admissions = () => {
                   <div className="flex-1 order-3 md:pl-12">
                     <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Application Submission</h3>
                     <p className="text-gray-600 mb-4">
-                      Complete and submit the online application form along with the required documents and application fee. This typically includes academic records, recommendation letters, and more.
+                      Complete and submit the online application form along with the required documents.
                     </p>
                     <Button variant="outline" size="sm" onClick={handleApplyNow}>
                       Start Application
@@ -241,7 +242,7 @@ const Admissions = () => {
                   <FileText className="w-5 h-5 text-school-secondary mr-3 flex-shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold text-school-primary">Application Fee</h4>
-                    <p className="text-gray-600 text-sm">Non-refundable fee of $100</p>
+                    <p className="text-gray-600 text-sm">Non-refundable fee of ₦10,000</p>
                   </div>
                 </li>
               </ul>
@@ -354,37 +355,37 @@ const Admissions = () => {
                       <h4 className="font-semibold text-school-primary mb-2">2023-2024 Annual Tuition</h4>
                       <div className="flex justify-between">
                         <span>Elementary School (K-5):</span>
-                        <span className="font-medium">$15,200</span>
+                        <span className="font-medium">₦950,000</span>
                       </div>
                       <div className="flex justify-between">
                         <span>Middle School (6-8):</span>
-                        <span className="font-medium">$16,400</span>
+                        <span className="font-medium">₦1,100,000</span>
                       </div>
                       <div className="flex justify-between">
                         <span>High School (9-12):</span>
-                        <span className="font-medium">$17,800</span>
+                        <span className="font-medium">₦1,250,000</span>
                       </div>
                     </div>
                     <div className="border-b border-gray-200 pb-4">
                       <h4 className="font-semibold text-school-primary mb-2">New Student Fees</h4>
                       <div className="flex justify-between">
                         <span>Application Fee (non-refundable):</span>
-                        <span className="font-medium">$100</span>
+                        <span className="font-medium">₦10,000</span>
                       </div>
                       <div className="flex justify-between">
                         <span>Enrollment Fee (one-time):</span>
-                        <span className="font-medium">$1,500</span>
+                        <span className="font-medium">₦100,000</span>
                       </div>
                     </div>
                     <div>
                       <h4 className="font-semibold text-school-primary mb-2">Additional Fees</h4>
                       <div className="flex justify-between">
                         <span>Technology Fee:</span>
-                        <span className="font-medium">$500</span>
+                        <span className="font-medium">₦35,000</span>
                       </div>
                       <div className="flex justify-between">
                         <span>Activity Fee:</span>
-                        <span className="font-medium">$300</span>
+                        <span className="font-medium">₦20,000</span>
                       </div>
                       <div className="flex justify-between">
                         <span>Extended Day Program:</span>
