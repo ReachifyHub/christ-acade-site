@@ -1,9 +1,9 @@
 
-import { ReactNode, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { ReactNode } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { useSupabaseAuth } from "@/hooks/use-supabase-auth";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface LayoutProps {
   children: ReactNode;
@@ -11,17 +11,16 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   const { user } = useSupabaseAuth();
-  const location = useLocation();
+  const isMobile = useIsMobile();
   
-  // Remove the authentication bar since we now handle this in the Header
-  // and have a dedicated profile page
-
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       
-      <main className="flex-grow pt-16">
-        {children}
+      <main className={`flex-grow ${isMobile ? 'pt-14' : 'pt-16'}`}>
+        <div className="w-full overflow-x-hidden">
+          {children}
+        </div>
       </main>
       <Footer />
     </div>
