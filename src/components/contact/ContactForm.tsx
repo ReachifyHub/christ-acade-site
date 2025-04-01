@@ -2,95 +2,127 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { CheckCircle } from "lucide-react";
-import SectionTitle from "@/components/SectionTitle";
+import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
+import { useSupabaseAuth } from "@/hooks/use-supabase-auth";
 
 const ContactForm = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const { user } = useSupabaseAuth();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+
+    try {
+      const messageData = {
+        name,
+        email,
+        phone,
+        subject,
+        message_content: message,
+        user_id: user?.id || null
+      };
+
+      // Store the message in the messages table
+      const { error } = await supabase
+        .from('messages')
+        .insert([messageData]);
+
+      if (error) {
+        throw error;
+      }
+
+      toast.success("Your message has been sent successfully! We'll get back to you soon.");
+      
+      // Reset form
+      setName("");
+      setEmail("");
+      setPhone("");
+      setSubject("");
+      setMessage("");
+    } catch (error: any) {
+      toast.error(error.message || "There was an error sending your message. Please try again.");
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 1500);
+    }
   };
 
   return (
     <div className="bg-white rounded-lg shadow-md p-6">
-      {isSubmitted ? (
-        <div className="text-center py-12">
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <CheckCircle className="w-8 h-8 text-green-600" />
+      <h3 className="font-medium text-lg text-school-primary mb-4">Send Us a Message</h3>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-2">
+            <Label htmlFor="name">Full Name</Label>
+            <Input
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Your full name"
+              required
+            />
           </div>
-          <h3 className="text-2xl font-serif font-semibold text-school-primary mb-2">Thank You!</h3>
-          <p className="text-gray-600 mb-6">
-            Your message has been sent successfully. We'll get back to you as soon as possible.
-          </p>
-          <Button onClick={() => setIsSubmitted(false)}>Send Another Message</Button>
+          <div className="space-y-2">
+            <Label htmlFor="email">Email Address</Label>
+            <Input
+              id="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="your.email@example.com"
+              required
+            />
+          </div>
         </div>
-      ) : (
-        <>
-          <SectionTitle
-            title="Send Us a Message"
-            subtitle="Get in Touch"
-            alignment="left"
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-2">
+            <Label htmlFor="phone">Phone Number</Label>
+            <Input
+              id="phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="+234 XXX XXX XXXX"
+              required
+            />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="subject">Subject</Label>
+            <Input
+              id="subject"
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
+              placeholder="How can we help you?"
+              required
+            />
+          </div>
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="message">Message</Label>
+          <Textarea
+            id="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Enter your message here..."
+            rows={5}
+            required
           />
-          <form onSubmit={handleSubmit} className="mt-6 space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                  Full Name*
-                </label>
-                <Input id="name" required />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                  Email Address*
-                </label>
-                <Input id="email" type="email" required />
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                  Phone Number
-                </label>
-                <Input id="phone" type="tel" />
-              </div>
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-                  Subject*
-                </label>
-                <Input id="subject" required />
-              </div>
-            </div>
-            
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                Message*
-              </label>
-              <Textarea id="message" rows={6} required />
-            </div>
-            
-            <div>
-              <Button 
-                type="submit" 
-                className="w-full bg-school-primary hover:bg-school-primary/90"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? "Sending..." : "Send Message"}
-              </Button>
-            </div>
-          </form>
-        </>
-      )}
+        </div>
+        <Button
+          type="submit"
+          className="bg-school-primary hover:bg-school-primary/90 text-white"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Sending..." : "Send Message"}
+        </Button>
+      </form>
     </div>
   );
 };

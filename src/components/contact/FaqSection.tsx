@@ -25,7 +25,19 @@ const FaqSection = () => {
           <div className="bg-white rounded-lg shadow-md p-6">
             <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">How do I apply for admission?</h3>
             <p className="text-gray-600">
-              You can apply for admission through our website by visiting the Admissions page and completing the online application form. If you have any questions about the application process, please contact our admissions office.
+              You can apply for admission through our website by visiting the Admissions page and completing the online application form. After submitting the form, your child will be scheduled for an entrance examination followed by an interview.
+            </p>
+          </div>
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">What is your school calendar?</h3>
+            <p className="text-gray-600">
+              We follow the Nigerian school calendar with three terms per academic year. The first term typically starts in September, second term in January, and third term in April, with holidays between terms and during major public holidays.
+            </p>
+          </div>
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Do you offer WAEC and NECO examinations?</h3>
+            <p className="text-gray-600">
+              Yes, our senior secondary school is accredited to offer both West African Examination Council (WAEC) and National Examination Council (NECO) examinations to our students in SSS 3.
             </p>
           </div>
         </div>

@@ -1,129 +1,100 @@
 
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 interface AcademicInfoTabProps {
-  formData: any;
-  handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
-  goToNextTab: () => void;
-  goToPreviousTab: () => void;
+  nextTab: () => void;
+  prevTab: () => void;
+  gradeLevel: string;
+  setGradeLevel: (value: string) => void;
+  previousSchool: string;
+  setPreviousSchool: (value: string) => void;
+  academicInterests: string;
+  setAcademicInterests: (value: string) => void;
+  extraActivities: string;
+  setExtraActivities: (value: string) => void;
 }
 
-const AcademicInfoTab = ({ formData, handleChange, goToNextTab, goToPreviousTab }: AcademicInfoTabProps) => {
+const AcademicInfoTab = ({
+  nextTab,
+  prevTab,
+  gradeLevel,
+  setGradeLevel,
+  previousSchool,
+  setPreviousSchool,
+  academicInterests,
+  setAcademicInterests,
+  extraActivities,
+  setExtraActivities,
+}: AcademicInfoTabProps) => {
   return (
-    <div>
-      <h3 className="text-xl font-serif font-semibold text-school-primary mb-4">Academic Information</h3>
-      
-      <div className="mb-6">
-        <Label htmlFor="gradeApplying">Grade Applying For*</Label>
-        <select
-          id="gradeApplying"
-          name="gradeApplying"
-          className="w-full rounded-md border border-gray-300 p-2 text-gray-900 shadow-sm focus:ring-2 focus:ring-school-primary"
-          value={formData.gradeApplying}
-          onChange={handleChange}
-          required
-        >
-          <option value="">Select Grade...</option>
-          <option value="K">Kindergarten</option>
-          <option value="1">1st Grade</option>
-          <option value="2">2nd Grade</option>
-          <option value="3">3rd Grade</option>
-          <option value="4">4th Grade</option>
-          <option value="5">5th Grade</option>
-          <option value="6">6th Grade</option>
-          <option value="7">7th Grade</option>
-          <option value="8">8th Grade</option>
-          <option value="9">9th Grade</option>
-          <option value="10">10th Grade</option>
-          <option value="11">11th Grade</option>
-          <option value="12">12th Grade</option>
-        </select>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div>
-          <Label htmlFor="currentSchool">Current School*</Label>
-          <Input 
-            id="currentSchool" 
-            name="currentSchool" 
-            value={formData.currentSchool}
-            onChange={handleChange}
-            required 
+    <div className="space-y-6">
+      <div className="space-y-4">
+        <div className="space-y-2">
+          <Label htmlFor="grade-level">Desired Grade Level</Label>
+          <Select value={gradeLevel} onValueChange={setGradeLevel} required>
+            <SelectTrigger id="grade-level">
+              <SelectValue placeholder="Select grade level" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="Primary 1">Primary 1</SelectItem>
+              <SelectItem value="Primary 2">Primary 2</SelectItem>
+              <SelectItem value="Primary 3">Primary 3</SelectItem>
+              <SelectItem value="Primary 4">Primary 4</SelectItem>
+              <SelectItem value="Primary 5">Primary 5</SelectItem>
+              <SelectItem value="Primary 6">Primary 6</SelectItem>
+              <SelectItem value="JSS 1">JSS 1</SelectItem>
+              <SelectItem value="JSS 2">JSS 2</SelectItem>
+              <SelectItem value="JSS 3">JSS 3</SelectItem>
+              <SelectItem value="SSS 1">SSS 1</SelectItem>
+              <SelectItem value="SSS 2">SSS 2</SelectItem>
+              <SelectItem value="SSS 3">SSS 3</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="previous-school">Previous School</Label>
+          <Input
+            id="previous-school"
+            placeholder="Enter the name of your previous school"
+            value={previousSchool}
+            onChange={(e) => setPreviousSchool(e.target.value)}
           />
         </div>
-        <div>
-          <Label htmlFor="currentGrade">Current Grade*</Label>
-          <select
-            id="currentGrade"
-            name="currentGrade"
-            className="w-full rounded-md border border-gray-300 p-2 text-gray-900 shadow-sm focus:ring-2 focus:ring-school-primary"
-            value={formData.currentGrade}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Select Grade...</option>
-            <option value="PreK">Pre-Kindergarten</option>
-            <option value="K">Kindergarten</option>
-            <option value="1">1st Grade</option>
-            <option value="2">2nd Grade</option>
-            <option value="3">3rd Grade</option>
-            <option value="4">4th Grade</option>
-            <option value="5">5th Grade</option>
-            <option value="6">6th Grade</option>
-            <option value="7">7th Grade</option>
-            <option value="8">8th Grade</option>
-            <option value="9">9th Grade</option>
-            <option value="10">10th Grade</option>
-            <option value="11">11th Grade</option>
-          </select>
+
+        <div className="space-y-2">
+          <Label htmlFor="academic-interests">Academic Interests and Strengths</Label>
+          <Textarea
+            id="academic-interests"
+            placeholder="What subjects or areas of study interest you the most?"
+            value={academicInterests}
+            onChange={(e) => setAcademicInterests(e.target.value)}
+            rows={3}
+          />
         </div>
-      </div>
-      
-      <div className="mb-6">
-        <Label htmlFor="schoolAddress">School Address*</Label>
-        <Input 
-          id="schoolAddress" 
-          name="schoolAddress" 
-          value={formData.schoolAddress}
-          onChange={handleChange}
-          required 
-        />
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div>
-          <Label htmlFor="yearsAttended">Years Attended*</Label>
-          <Input 
-            id="yearsAttended" 
-            name="yearsAttended" 
-            value={formData.yearsAttended}
-            onChange={handleChange}
-            required 
+
+        <div className="space-y-2">
+          <Label htmlFor="extra-activities">Extracurricular Activities</Label>
+          <Textarea
+            id="extra-activities"
+            placeholder="What activities are you interested in pursuing outside of academics? (Sports, music, arts, etc.)"
+            value={extraActivities}
+            onChange={(e) => setExtraActivities(e.target.value)}
+            rows={3}
           />
         </div>
       </div>
-      
-      <div className="mb-8">
-        <Label htmlFor="reasonForLeaving">Reason for Leaving Current School</Label>
-        <Textarea 
-          id="reasonForLeaving" 
-          name="reasonForLeaving" 
-          rows={3}
-          value={formData.reasonForLeaving}
-          onChange={handleChange}
-        />
-      </div>
-      
+
       <div className="flex justify-between">
-        <Button type="button" variant="outline" onClick={goToPreviousTab}>
-          <ChevronLeft className="mr-2 h-4 w-4" /> Previous
+        <Button variant="outline" onClick={prevTab}>
+          Previous
         </Button>
-        <Button type="button" onClick={goToNextTab}>
-          Next <ChevronRight className="ml-2 h-4 w-4" />
+        <Button onClick={nextTab} disabled={!gradeLevel}>
+          Next
         </Button>
       </div>
     </div>

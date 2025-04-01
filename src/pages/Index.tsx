@@ -132,14 +132,14 @@ const Home = () => {
               <div className="h-48 bg-school-primary">
                 <img
                   src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                  alt="Elementary School"
+                  alt="Primary School"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Elementary School</h3>
+                <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Primary School</h3>
                 <p className="text-gray-600 mb-4">
-                  Our elementary program builds a strong foundation in core subjects while nurturing creativity and curiosity in young learners.
+                  Our primary program builds a strong foundation in core subjects while nurturing creativity and curiosity in young learners.
                 </p>
                 <Button asChild variant="outline" className="w-full">
                   <Link to="/academics">Learn More</Link>
@@ -150,14 +150,14 @@ const Home = () => {
               <div className="h-48 bg-school-primary">
                 <img
                   src="https://images.unsplash.com/photo-1577896852618-3b02bc95851c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                  alt="Middle School"
+                  alt="Junior Secondary School"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Middle School</h3>
+                <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Junior Secondary School</h3>
                 <p className="text-gray-600 mb-4">
-                  Our middle school program helps students navigate the crucial transition years with academic rigor and personal guidance.
+                  Our JSS program helps students navigate the crucial transition years with academic rigor and personal guidance.
                 </p>
                 <Button asChild variant="outline" className="w-full">
                   <Link to="/academics">Learn More</Link>
@@ -168,14 +168,14 @@ const Home = () => {
               <div className="h-48 bg-school-primary">
                 <img
                   src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                  alt="High School"
+                  alt="Senior Secondary School"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">High School</h3>
+                <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Senior Secondary School</h3>
                 <p className="text-gray-600 mb-4">
-                  Our high school program prepares students for college and beyond with advanced academics and leadership opportunities.
+                  Our SSS program prepares students for WAEC, NECO and university entrance examinations with advanced academics and leadership opportunities.
                 </p>
                 <Button asChild variant="outline" className="w-full">
                   <Link to="/academics">Learn More</Link>
@@ -229,7 +229,7 @@ const Home = () => {
                   Students Win National Science Competition
                 </h3>
                 <p className="text-gray-600 mb-4 line-clamp-3">
-                  Our high school science team won first place in the National Science Olympiad, showcasing their exceptional talent and hard work.
+                  Our senior secondary school science team won first place in the National Science Olympiad, showcasing their exceptional talent and hard work.
                 </p>
                 <Button asChild variant="link" className="p-0 text-school-primary">
                   <Link to="/news">Read More</Link>
@@ -272,14 +272,14 @@ const Home = () => {
               <div className="p-6">
                 <div className="text-sm text-school-secondary font-medium mb-2">Upcoming Event</div>
                 <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">
-                  Annual Sports Day
+                  Annual Inter-House Sports
                 </h3>
                 <div className="flex items-center text-gray-600 mb-4">
                   <Calendar className="w-4 h-4 mr-2" />
                   <span>July 12, 2023</span>
                 </div>
                 <p className="text-gray-600 mb-4 line-clamp-3">
-                  Join us for our Annual Sports Day celebration, featuring athletic competitions, performances, and community activities.
+                  Join us for our Annual Inter-House Sports competition, featuring athletic events, performances, and community activities.
                 </p>
                 <Button asChild variant="link" className="p-0 text-school-primary">
                   <Link to="/news">View All Events</Link>
@@ -305,7 +305,7 @@ const Home = () => {
                   <span className="text-school-primary font-bold text-xl">A</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold">Amanda Johnson</h4>
+                  <h4 className="font-semibold">Adebola Adeyemi</h4>
                   <p className="text-sm text-gray-500">Parent</p>
                 </div>
               </div>
@@ -318,15 +318,15 @@ const Home = () => {
             <div className="bg-white p-6 rounded-lg shadow-md">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 rounded-full bg-school-accent flex items-center justify-center mr-4">
-                  <span className="text-school-primary font-bold text-xl">M</span>
+                  <span className="text-school-primary font-bold text-xl">O</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold">Michael Thompson</h4>
+                  <h4 className="font-semibold">Oluwaseun Olatunji</h4>
                   <p className="text-sm text-gray-500">Alumni</p>
                 </div>
               </div>
               <p className="text-gray-600 italic">
-                "The education I received at Christ Acade prepared me well for college and beyond. The academic rigor, combined with opportunities for leadership and service, gave me a strong foundation for success."
+                "The education I received at Christ Acade prepared me well for university and beyond. The academic rigor, combined with opportunities for leadership and service, gave me a strong foundation for success."
               </p>
             </div>
 
@@ -334,10 +334,10 @@ const Home = () => {
             <div className="bg-white p-6 rounded-lg shadow-md">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 rounded-full bg-school-accent flex items-center justify-center mr-4">
-                  <span className="text-school-primary font-bold text-xl">R</span>
+                  <span className="text-school-primary font-bold text-xl">C</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold">Dr. Rebecca Chen</h4>
+                  <h4 className="font-semibold">Dr. Chioma Nwankwo</h4>
                   <p className="text-sm text-gray-500">Education Professional</p>
                 </div>
               </div>
