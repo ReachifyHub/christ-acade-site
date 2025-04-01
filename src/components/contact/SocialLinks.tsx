@@ -1,5 +1,5 @@
 
-import { MessageCircle as WhatsApp, Video as TikTok } from "lucide-react";
+import { BrandTiktok, BrandWhatsapp } from "lucide-react";
 
 const SocialLinks = () => {
   return (
@@ -13,7 +13,7 @@ const SocialLinks = () => {
           className="bg-green-500 text-white p-3 rounded-full hover:bg-green-600 transition-colors"
           aria-label="WhatsApp"
         >
-          <WhatsApp className="w-5 h-5" />
+          <BrandWhatsapp className="w-5 h-5" />
         </a>
         <a
           href="https://www.tiktok.com/@christacadegroup"
@@ -22,7 +22,7 @@ const SocialLinks = () => {
           className="bg-black text-white p-3 rounded-full hover:bg-gray-800 transition-colors"
           aria-label="TikTok"
         >
-          <TikTok className="w-5 h-5" />
+          <BrandTiktok className="w-5 h-5" />
         </a>
       </div>
     </div>
