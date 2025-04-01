@@ -20,7 +20,7 @@ const ApplicationSuccess = ({ onViewStatus }: ApplicationSuccessProps) => {
             Thank you for applying to Christ Acade Group of School. Your application has been received and is being processed. You will receive an email confirmation shortly.
           </p>
           <p className="text-gray-600 mb-8">
-            Our admissions team will review your application and contact you within 5-7 business days regarding the next steps in the admissions process.
+            Our admissions team will review your application and contact you within 5-7 business days regarding the next steps in the admissions process for the 2025-2026 academic year.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button asChild>

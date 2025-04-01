@@ -14,7 +14,7 @@ const Home = () => {
         title="Nurturing Excellence, Shaping Futures"
         subtitle="Welcome to Christ Acade Group of School"
         description="We provide a comprehensive education that fosters academic excellence, character development, and spiritual growth in a nurturing environment."
-        image="https://images.unsplash.com/photo-1492321936769-b49830bc1d1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+        image="/assets/images/hero-image.jpg"
         buttonText="Apply Now"
         buttonLink="/apply"
       />
@@ -47,28 +47,28 @@ const Home = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="rounded-lg overflow-hidden shadow-md transform translate-y-8">
                 <img
-                  src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                  src="/assets/images/campus.jpg"
                   alt="School campus"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="rounded-lg overflow-hidden shadow-md">
                 <img
-                  src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                  src="/assets/images/classroom.jpg"
                   alt="Students in classroom"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="rounded-lg overflow-hidden shadow-md">
                 <img
-                  src="https://images.unsplash.com/photo-1595126710466-5d444f5be811?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                  src="/assets/images/science-lab.jpg"
                   alt="Science lab"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="rounded-lg overflow-hidden shadow-md transform translate-y-(-8)">
                 <img
-                  src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                  src="/assets/images/sports.jpg"
                   alt="Sports activities"
                   className="w-full h-full object-cover"
                 />
@@ -131,7 +131,7 @@ const Home = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="h-48 bg-school-primary">
                 <img
-                  src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                  src="/assets/images/primary-school.jpg"
                   alt="Primary School"
                   className="w-full h-full object-cover"
                 />
@@ -149,7 +149,7 @@ const Home = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="h-48 bg-school-primary">
                 <img
-                  src="https://images.unsplash.com/photo-1577896852618-3b02bc95851c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                  src="/assets/images/junior-secondary.jpg"
                   alt="Junior Secondary School"
                   className="w-full h-full object-cover"
                 />
@@ -167,7 +167,7 @@ const Home = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="h-48 bg-school-primary">
                 <img
-                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                  src="/assets/images/senior-secondary.jpg"
                   alt="Senior Secondary School"
                   className="w-full h-full object-cover"
                 />
@@ -218,13 +218,13 @@ const Home = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="h-48 bg-gray-200">
                 <img
-                  src="https://images.unsplash.com/photo-1531496681073-2315c7bce613?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                  src="/assets/images/news1.jpg"
                   alt="Student Achievement Award"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-6">
-                <div className="text-sm text-gray-500 mb-2">June 15, 2023</div>
+                <div className="text-sm text-gray-500 mb-2">June 15, 2025</div>
                 <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">
                   Students Win National Science Competition
                 </h3>
@@ -241,13 +241,13 @@ const Home = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="h-48 bg-gray-200">
                 <img
-                  src="https://images.unsplash.com/photo-1511543508775-2b13beb9b3c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                  src="/assets/images/news2.jpg"
                   alt="New Library Opening"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-6">
-                <div className="text-sm text-gray-500 mb-2">May 28, 2023</div>
+                <div className="text-sm text-gray-500 mb-2">May 28, 2025</div>
                 <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">
                   New State-of-the-Art Library Opens
                 </h3>
@@ -264,7 +264,7 @@ const Home = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="h-48 bg-gray-200">
                 <img
-                  src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                  src="/assets/images/event1.jpg"
                   alt="Annual Sports Day"
                   className="w-full h-full object-cover"
                 />
@@ -276,7 +276,7 @@ const Home = () => {
                 </h3>
                 <div className="flex items-center text-gray-600 mb-4">
                   <Calendar className="w-4 h-4 mr-2" />
-                  <span>July 12, 2023</span>
+                  <span>July 12, 2025</span>
                 </div>
                 <p className="text-gray-600 mb-4 line-clamp-3">
                   Join us for our Annual Inter-House Sports competition, featuring athletic events, performances, and community activities.

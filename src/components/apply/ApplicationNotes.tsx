@@ -59,7 +59,7 @@ const ApplicationNotes = () => {
         </div>
 
         <div>
-          <h3 className="text-lg font-medium mb-2">Tuition and Fees</h3>
+          <h3 className="text-lg font-medium mb-2">Tuition and Fees (2025-2026)</h3>
           <p className="mb-2">Annual tuition fees vary by grade level:</p>
           <ul className="space-y-2">
             <li className="flex items-start">
