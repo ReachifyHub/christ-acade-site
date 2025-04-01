@@ -53,7 +53,7 @@ const Home = () => {
               </div>
               <div className="rounded-lg overflow-hidden shadow-md">
                 <img
-                  src="/assets/images/classroom.jpg"
+                  src="/assets/images/classroom.jpeg"
                   alt="Students in classroom"
                   className="w-full h-full object-cover"
                 />
