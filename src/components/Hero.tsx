@@ -28,10 +28,15 @@ const Hero = ({
   overlay = true,
   small = false,
 }: HeroProps) => {
+  // Ensure image path has correct format
+  const imagePath = image.startsWith("http") || image.startsWith("./") || image.startsWith("/") 
+    ? image 
+    : `./${image}`;
+    
   return (
     <div
       className={`relative flex items-center ${small ? "min-h-[40vh]" : "min-h-[80vh]"} w-full bg-cover bg-center`}
-      style={{ backgroundImage: `url(${image})` }}
+      style={{ backgroundImage: `url(${imagePath})` }}
     >
       {overlay && (
         <div className="absolute inset-0 bg-gradient-to-r from-school-primary/90 via-school-primary/80 to-school-primary/60"></div>
