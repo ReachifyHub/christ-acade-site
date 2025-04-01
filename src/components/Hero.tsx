@@ -31,7 +31,7 @@ const Hero = ({
   // Ensure image path has correct format
   const imagePath = image.startsWith("http") || image.startsWith("./") || image.startsWith("/") 
     ? image 
-    : `./${image}`;
+    : `/${image}`;
     
   return (
     <div

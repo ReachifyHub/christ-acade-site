@@ -1,24 +1,14 @@
 
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Menu, X, User } from "lucide-react";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
-import { useSupabaseAuth } from "@/hooks/use-supabase-auth";
+import { Menu, X } from "lucide-react";
+import DesktopNavigation from "./navigation/NavigationLinks";
+import MobileNavigation from "./navigation/MobileNavigation";
+import AuthButtons from "./navigation/AuthButtons";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { user } = useSupabaseAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,29 +42,13 @@ const Header = () => {
           </span>
         </Link>
 
-        {/* Desktop Navigation - Using NavigationMenu */}
+        {/* Desktop Navigation */}
         <div className="hidden md:flex md:items-center md:justify-between md:flex-grow md:ml-10">
           <DesktopNavigation />
           
-          {/* Auth buttons moved to right side */}
+          {/* Auth buttons */}
           <div className="flex space-x-2 ml-4">
-            {user ? (
-              <Button asChild variant="outline" className="border-school-primary text-school-primary hover:bg-school-primary hover:text-white">
-                <Link to="/profile">
-                  <User className="mr-2 h-4 w-4" />
-                  Profile
-                </Link>
-              </Button>
-            ) : (
-              <>
-                <Button asChild variant="outline" className="border-school-primary text-school-primary hover:bg-school-primary hover:text-white">
-                  <Link to="/login">Login</Link>
-                </Button>
-                <Button asChild className="bg-school-primary text-white hover:bg-school-primary/90">
-                  <Link to="/apply">Apply Now</Link>
-                </Button>
-              </>
-            )}
+            <AuthButtons />
           </div>
         </div>
 
@@ -92,146 +66,14 @@ const Header = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white absolute top-full left-0 w-full shadow-lg animate-fade-in">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            <NavLinksMobile closeMenu={() => setIsMobileMenuOpen(false)} />
+            <MobileNavigation closeMenu={() => setIsMobileMenuOpen(false)} />
             <div className="flex flex-col space-y-2 pt-2">
-              {user ? (
-                <Button asChild className="bg-school-primary text-white w-full">
-                  <Link to="/profile" onClick={() => setIsMobileMenuOpen(false)}>
-                    <User className="mr-2 h-4 w-4" />
-                    Profile
-                  </Link>
-                </Button>
-              ) : (
-                <>
-                  <Button asChild variant="outline" className="border-school-primary text-school-primary w-full">
-                    <Link to="/login" onClick={() => setIsMobileMenuOpen(false)}>Login</Link>
-                  </Button>
-                  <Button asChild className="bg-school-primary text-white w-full">
-                    <Link to="/apply" onClick={() => setIsMobileMenuOpen(false)}>Apply Now</Link>
-                  </Button>
-                </>
-              )}
+              <AuthButtons mobile onButtonClick={() => setIsMobileMenuOpen(false)} />
             </div>
           </div>
         </div>
       )}
     </header>
-  );
-};
-
-const DesktopNavigation = () => {
-  return (
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <Link to="/" className="text-school-primary hover:text-school-secondary font-medium transition-colors px-3 py-2">
-            Home
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className="text-school-primary hover:text-school-secondary">About Us</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[200px] gap-3 p-4">
-              <li>
-                <NavigationMenuLink asChild>
-                  <Link to="/about" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                    <div className="text-sm font-medium">About Our School</div>
-                  </Link>
-                </NavigationMenuLink>
-              </li>
-              <li>
-                <NavigationMenuLink asChild>
-                  <Link to="/about#history" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                    <div className="text-sm font-medium">History</div>
-                  </Link>
-                </NavigationMenuLink>
-              </li>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link to="/academics" className="text-school-primary hover:text-school-secondary font-medium transition-colors px-3 py-2">
-            Academics
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link to="/admissions" className="text-school-primary hover:text-school-secondary font-medium transition-colors px-3 py-2">
-            Admissions
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link to="/gallery" className="text-school-primary hover:text-school-secondary font-medium transition-colors px-3 py-2">
-            Gallery
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link to="/news" className="text-school-primary hover:text-school-secondary font-medium transition-colors px-3 py-2">
-            News
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link to="/contact" className="text-school-primary hover:text-school-secondary font-medium transition-colors px-3 py-2">
-            Contact
-          </Link>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
-  );
-};
-
-const NavLinksMobile = ({ closeMenu }: { closeMenu: () => void }) => {
-  return (
-    <>
-      <Link
-        to="/"
-        className="text-school-primary hover:text-school-secondary font-medium py-2 transition-colors"
-        onClick={closeMenu}
-      >
-        Home
-      </Link>
-      <Link
-        to="/about"
-        className="text-school-primary hover:text-school-secondary font-medium py-2 transition-colors"
-        onClick={closeMenu}
-      >
-        About Us
-      </Link>
-      <Link
-        to="/academics"
-        className="text-school-primary hover:text-school-secondary font-medium py-2 transition-colors"
-        onClick={closeMenu}
-      >
-        Academics
-      </Link>
-      <Link
-        to="/admissions"
-        className="text-school-primary hover:text-school-secondary font-medium py-2 transition-colors"
-        onClick={closeMenu}
-      >
-        Admissions
-      </Link>
-      <Link
-        to="/gallery"
-        className="text-school-primary hover:text-school-secondary font-medium py-2 transition-colors"
-        onClick={closeMenu}
-      >
-        Gallery
-      </Link>
-      <Link
-        to="/news"
-        className="text-school-primary hover:text-school-secondary font-medium py-2 transition-colors"
-        onClick={closeMenu}
-      >
-        News & Events
-      </Link>
-      <Link
-        to="/contact"
-        className="text-school-primary hover:text-school-secondary font-medium py-2 transition-colors"
-        onClick={closeMenu}
-      >
-        Contact Us
-      </Link>
-    </>
   );
 };
 
