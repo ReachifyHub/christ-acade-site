@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Calendar, BookOpen, GraduationCap, Trophy, Users, Home as HomeIcon } from "lucide-react";
@@ -55,7 +54,7 @@ const Home = () => {
               <div className="rounded-lg overflow-hidden shadow-md">
                 <img
                   src="/assets/images/classroom.jpg"
-                  alt="Students in classroom" />
+                  alt="Students in classroom
                   className="w-full h-full object-cover"
                 />
               </div>
