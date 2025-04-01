@@ -44,21 +44,24 @@ const Login = () => {
     setLoading(true);
     
     try {
-      // Check if email already exists
-      const { data: existingUsers } = await supabase
-        .from('auth.users')
-        .select('email')
-        .eq('email', email)
-        .single();
-        
-      if (existingUsers) {
+      // Check if email already exists by attempting to sign in with OTP
+      // This is a workaround since we can't directly query auth.users
+      const { data, error: checkError } = await supabase.auth.signInWithOtp({
+        email,
+        options: {
+          shouldCreateUser: false,
+        }
+      });
+      
+      // If no error is thrown, the email exists
+      if (!checkError) {
         toast.error("This email is already registered. Please use a different email or login instead.");
         setLoading(false);
         return;
       }
       
-      // Proceed with signup
-      const { data, error } = await supabase.auth.signUp({
+      // Only proceed with signup if the email doesn't exist
+      const { error } = await supabase.auth.signUp({
         email,
         password,
         options: {

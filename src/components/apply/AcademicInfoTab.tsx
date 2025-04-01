@@ -6,38 +6,38 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 interface AcademicInfoTabProps {
-  nextTab: () => void;
-  prevTab: () => void;
-  gradeLevel: string;
-  setGradeLevel: (value: string) => void;
-  previousSchool: string;
-  setPreviousSchool: (value: string) => void;
-  academicInterests: string;
-  setAcademicInterests: (value: string) => void;
-  extraActivities: string;
-  setExtraActivities: (value: string) => void;
+  formData: any;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
+  goToNextTab: () => void;
+  goToPreviousTab: () => void;
 }
 
 const AcademicInfoTab = ({
-  nextTab,
-  prevTab,
-  gradeLevel,
-  setGradeLevel,
-  previousSchool,
-  setPreviousSchool,
-  academicInterests,
-  setAcademicInterests,
-  extraActivities,
-  setExtraActivities,
+  formData,
+  handleChange,
+  goToNextTab,
+  goToPreviousTab
 }: AcademicInfoTabProps) => {
   return (
     <div className="space-y-6">
       <div className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="grade-level">Desired Grade Level</Label>
-          <Select value={gradeLevel} onValueChange={setGradeLevel} required>
-            <SelectTrigger id="grade-level">
-              <SelectValue placeholder="Select grade level" />
+          <Label htmlFor="classApplying">Desired Class Level</Label>
+          <Select 
+            value={formData.classApplying} 
+            onValueChange={(value) => {
+              const event = {
+                target: {
+                  name: "classApplying",
+                  value: value,
+                  type: "select"
+                }
+              } as unknown as React.ChangeEvent<HTMLSelectElement>;
+              handleChange(event);
+            }}
+          >
+            <SelectTrigger id="classApplying">
+              <SelectValue placeholder="Select class level" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="Primary 1">Primary 1</SelectItem>
@@ -57,43 +57,68 @@ const AcademicInfoTab = ({
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="previous-school">Previous School</Label>
+          <Label htmlFor="currentSchool">Current School</Label>
           <Input
-            id="previous-school"
-            placeholder="Enter the name of your previous school"
-            value={previousSchool}
-            onChange={(e) => setPreviousSchool(e.target.value)}
+            id="currentSchool"
+            name="currentSchool"
+            placeholder="Enter the name of your current school"
+            value={formData.currentSchool}
+            onChange={handleChange}
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="academic-interests">Academic Interests and Strengths</Label>
+          <Label htmlFor="currentClass">Current Class</Label>
+          <Input
+            id="currentClass"
+            name="currentClass"
+            placeholder="Enter your current class"
+            value={formData.currentClass}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="schoolAddress">School Address</Label>
           <Textarea
-            id="academic-interests"
-            placeholder="What subjects or areas of study interest you the most?"
-            value={academicInterests}
-            onChange={(e) => setAcademicInterests(e.target.value)}
+            id="schoolAddress"
+            name="schoolAddress"
+            placeholder="Enter the address of your current school"
+            value={formData.schoolAddress}
+            onChange={handleChange}
             rows={3}
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="extra-activities">Extracurricular Activities</Label>
+          <Label htmlFor="yearsAttended">Years Attended</Label>
+          <Input
+            id="yearsAttended"
+            name="yearsAttended"
+            placeholder="e.g., 2019-2022"
+            value={formData.yearsAttended}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="reasonForLeaving">Reason for Leaving</Label>
           <Textarea
-            id="extra-activities"
-            placeholder="What activities are you interested in pursuing outside of academics? (Sports, music, arts, etc.)"
-            value={extraActivities}
-            onChange={(e) => setExtraActivities(e.target.value)}
+            id="reasonForLeaving"
+            name="reasonForLeaving"
+            placeholder="Please explain why you are leaving your current school"
+            value={formData.reasonForLeaving}
+            onChange={handleChange}
             rows={3}
           />
         </div>
       </div>
 
       <div className="flex justify-between">
-        <Button variant="outline" onClick={prevTab}>
+        <Button variant="outline" onClick={goToPreviousTab}>
           Previous
         </Button>
-        <Button onClick={nextTab} disabled={!gradeLevel}>
+        <Button onClick={goToNextTab}>
           Next
         </Button>
       </div>

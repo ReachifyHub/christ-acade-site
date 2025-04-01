@@ -17,8 +17,8 @@ export const useApplicationForm = () => {
   const [gender, setGender] = useState("");
   const [nationality, setNationality] = useState("Nigerian");
   const [address, setAddress] = useState("");
-  const [state, setState] = useState("Osun");
-  const [city, setCity] = useState("Osogbo");
+  const [state, setState] = useState("Lagos");
+  const [city, setCity] = useState("Lagos");
 
   // Parent Information
   const [parentName, setParentName] = useState("");
