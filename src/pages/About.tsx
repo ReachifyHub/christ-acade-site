@@ -141,7 +141,7 @@ const About = () => {
                 <h3 className="text-xl font-serif font-semibold text-school-primary mb-1">Mr. Aderemi</h3>
                 <p className="text-school-secondary font-medium mb-4">Proprietor</p>
                 <p className="text-gray-600 mb-4">
-                  Mr. Aderemi brings years of educational leadership experience to Christ Acade. He is dedicated to fostering a culture of academic excellence and holistic development.
+                  Prophet Olamoyesan brings years of educational leadership experience to Christ Acade. He is dedicated to fostering a culture of academic excellence and holistic development.
                 </p>
                 <div className="border-t border-gray-200 pt-4 mt-4">
                   <p className="text-gray-600 flex items-center">
@@ -187,7 +187,7 @@ const About = () => {
                 <h3 className="text-xl font-serif font-semibold text-school-primary mb-1">Mrs. Adejumo</h3>
                 <p className="text-school-secondary font-medium mb-4">HOS</p>
                 <p className="text-gray-600 mb-4">
-                  Mrs. Adejumo coordinates staff development and administrative functions. She ensures the smooth operation of school activities and programs.
+                  Mrs. Rebecca Adejumo coordinates staff development and administrative functions. She ensures the smooth operation of school activities and programs.
                 </p>
                 <div className="border-t border-gray-200 pt-4 mt-4">
                   <p className="text-gray-600 flex items-center">
