@@ -1,4 +1,4 @@
-import { FaWhatsapp, FaTiktok } from "react-icons/fa"; // Import correct icons
+import { PhoneCall, Music2 } from "lucide-react"; // Closest alternatives
 
 const SocialLinks = () => {
   return (
@@ -12,7 +12,7 @@ const SocialLinks = () => {
           className="bg-green-500 text-white p-3 rounded-full hover:bg-green-600 transition-colors"
           aria-label="WhatsApp"
         >
-          <FaWhatsapp className="w-5 h-5" />
+          <PhoneCall className="w-5 h-5" /> {/* Phone icon for WhatsApp */}
         </a>
         <a
           href="https://www.tiktok.com/@christacadegroup"
@@ -21,7 +21,7 @@ const SocialLinks = () => {
           className="bg-black text-white p-3 rounded-full hover:bg-gray-800 transition-colors"
           aria-label="TikTok"
         >
-          <FaTiktok className="w-5 h-5" />
+          <Music2 className="w-5 h-5" /> {/* Music icon for TikTok */}
         </a>
       </div>
     </div>
