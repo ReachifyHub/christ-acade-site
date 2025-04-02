@@ -11,7 +11,7 @@ const Gallery = () => {
   const images = [
     {
       id: 1,
-      src: "/assets/images/campus.jpg",
+      src: "https://i.ibb.co/KxvhL881/2024-07-16.webp",
       alt: "School campus",
       category: "Campus",
       caption: "Our beautiful main building surrounded by lush gardens"
