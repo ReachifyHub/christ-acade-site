@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import PersonalInfoTab from "@/components/apply/PersonalInfoTab";
@@ -204,9 +203,11 @@ const Apply = () => {
   return (
     <div>
       <PageHeader
-        title="Apply for Admission"
-        description="Join our vibrant academic community by completing this application form. We look forward to welcoming you to Christ Acade Group of School."
-        image="/assets/images/news1.jpg"
+        title="Application Form"
+        breadcrumbs={[
+          { label: "Home", link: "/" },
+          { label: "Apply" }
+        ]}
       />
 
       <div className="container mx-auto px-4 py-12">

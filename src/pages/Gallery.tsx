@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import PageHeader from "@/components/PageHeader";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -83,8 +82,10 @@ const Gallery = () => {
     <div>
       <PageHeader
         title="School Gallery"
-        description="Take a visual tour of our campus, classrooms, and various school activities. These images showcase the vibrant learning environment we provide for our students."
-        image="/assets/images/campus.jpg"
+        breadcrumbs={[
+          { label: "Home", link: "/" },
+          { label: "Gallery" }
+        ]}
       />
 
       <div className="container mx-auto px-4 py-12">
