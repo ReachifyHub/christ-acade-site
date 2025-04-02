@@ -169,7 +169,7 @@ const About = () => {
                 <div className="border-t border-gray-200 pt-4 mt-4">
                   <p className="text-gray-600 flex items-center">
                     <Mail className="w-4 h-4 mr-2 text-school-primary" />
-                    viceprincipal@christacade.edu
+                    
                   </p>
                 </div>
               </div>
@@ -179,20 +179,20 @@ const About = () => {
               <div className="h-64 bg-gray-200">
                 <img
                   src="https://i.ibb.co/C3PpCwwn/IMG-20250402-WA0003.jpg"
-                  alt="Mrs. Adejumo"
+                  alt="Mrs. Rebecca Adejumo"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-serif font-semibold text-school-primary mb-1">Mrs. Adejumo</h3>
-                <p className="text-school-secondary font-medium mb-4">Head of Staff (HOS)</p>
+                <p className="text-school-secondary font-medium mb-4">HOS</p>
                 <p className="text-gray-600 mb-4">
                   Mrs. Adejumo coordinates staff development and administrative functions. She ensures the smooth operation of school activities and programs.
                 </p>
                 <div className="border-t border-gray-200 pt-4 mt-4">
                   <p className="text-gray-600 flex items-center">
                     <Mail className="w-4 h-4 mr-2 text-school-primary" />
-                    hos@christacade.edu
+                    
                   </p>
                 </div>
               </div>
