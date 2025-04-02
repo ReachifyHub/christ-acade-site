@@ -1,57 +1,43 @@
 
-import { Mail, MapPin, Phone, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 const ContactInfo = () => {
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
+    <div>
       <h3 className="font-medium text-lg text-school-primary mb-4">Contact Information</h3>
       
-      <div className="space-y-6 mt-6">
-        <div className="flex items-start">
-          <div className="bg-school-accent p-3 rounded-lg mr-4">
-            <MapPin className="w-6 h-6 text-school-primary" />
-          </div>
+      <div className="space-y-4">
+        <div className="flex items-start space-x-3">
+          <MapPin className="w-5 h-5 text-school-primary mt-1 flex-shrink-0" />
           <div>
-            <h3 className="font-medium text-lg text-school-primary">Address</h3>
-            <p className="text-gray-600 mt-1">No. 3B Owoeye Street, Ayetoro Area, Osogbo, Osun State</p>
+            <p className="font-medium">Address</p>
+            <p className="text-gray-600">20 Rumuoparli Avenue, Off Ada George Road, Port Harcourt, Rivers State, Nigeria</p>
           </div>
         </div>
         
-        <div className="flex items-start">
-          <div className="bg-school-accent p-3 rounded-lg mr-4">
-            <Phone className="w-6 h-6 text-school-primary" />
-          </div>
+        <div className="flex items-start space-x-3">
+          <Phone className="w-5 h-5 text-school-primary mt-1 flex-shrink-0" />
           <div>
-            <h3 className="font-medium text-lg text-school-primary">Phone</h3>
-            <p className="text-gray-600 mt-1">
-              <a href="tel:+2348102473418" className="hover:text-school-primary transition-colors">
-                +234 810 247 3418
-              </a>
-            </p>
+            <p className="font-medium">Phone</p>
+            <p className="text-gray-600">+234 810 247 3418</p>
+            <p className="text-gray-600">+234 703 426 2624</p>
           </div>
         </div>
         
-        <div className="flex items-start">
-          <div className="bg-school-accent p-3 rounded-lg mr-4">
-            <Mail className="w-6 h-6 text-school-primary" />
-          </div>
-          <div>
-            <h3 className="font-medium text-lg text-school-primary">Email</h3>
-            <p className="text-gray-600 mt-1">
-              <a href="mailto:christacadegroupofschool@gmail.com" className="hover:text-school-primary transition-colors">
-                christacadegroupofschool@gmail.com
-              </a>
-            </p>
+        <div className="flex items-start space-x-3">
+          <Mail className="w-5 h-5 text-school-primary mt-1 flex-shrink-0" />
+          <div className="break-words">
+            <p className="font-medium">Email</p>
+            <p className="text-gray-600 break-all">info@christacadegroup.com</p>
+            <p className="text-gray-600 break-all">admissions@christacadegroup.com</p>
           </div>
         </div>
         
-        <div className="flex items-start">
-          <div className="bg-school-accent p-3 rounded-lg mr-4">
-            <Clock className="w-6 h-6 text-school-primary" />
-          </div>
+        <div className="flex items-start space-x-3">
+          <Clock className="w-5 h-5 text-school-primary mt-1 flex-shrink-0" />
           <div>
-            <h3 className="font-medium text-lg text-school-primary">Office Hours</h3>
-            <p className="text-gray-600 mt-1">Monday - Friday: 8:00 AM - 4:00 PM</p>
+            <p className="font-medium">Office Hours</p>
+            <p className="text-gray-600">Monday - Friday: 8:00 AM - 4:00 PM</p>
             <p className="text-gray-600">Saturday: 9:00 AM - 12:00 PM</p>
           </div>
         </div>

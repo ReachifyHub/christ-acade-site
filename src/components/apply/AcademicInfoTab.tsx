@@ -40,18 +40,22 @@ const AcademicInfoTab = ({
               <SelectValue placeholder="Select class level" />
             </SelectTrigger>
             <SelectContent>
+              {/* Nigerian Education System Classes */}
+              <SelectItem value="Nursery 1">Nursery 1</SelectItem>
+              <SelectItem value="Nursery 2">Nursery 2</SelectItem>
+              <SelectItem value="Nursery 3">Nursery 3</SelectItem>
               <SelectItem value="Primary 1">Primary 1</SelectItem>
               <SelectItem value="Primary 2">Primary 2</SelectItem>
               <SelectItem value="Primary 3">Primary 3</SelectItem>
               <SelectItem value="Primary 4">Primary 4</SelectItem>
               <SelectItem value="Primary 5">Primary 5</SelectItem>
               <SelectItem value="Primary 6">Primary 6</SelectItem>
-              <SelectItem value="JSS 1">JSS 1</SelectItem>
-              <SelectItem value="JSS 2">JSS 2</SelectItem>
-              <SelectItem value="JSS 3">JSS 3</SelectItem>
-              <SelectItem value="SSS 1">SSS 1</SelectItem>
-              <SelectItem value="SSS 2">SSS 2</SelectItem>
-              <SelectItem value="SSS 3">SSS 3</SelectItem>
+              <SelectItem value="JSS 1">JSS 1 (Junior Secondary School)</SelectItem>
+              <SelectItem value="JSS 2">JSS 2 (Junior Secondary School)</SelectItem>
+              <SelectItem value="JSS 3">JSS 3 (Junior Secondary School)</SelectItem>
+              <SelectItem value="SSS 1">SSS 1 (Senior Secondary School)</SelectItem>
+              <SelectItem value="SSS 2">SSS 2 (Senior Secondary School)</SelectItem>
+              <SelectItem value="SSS 3">SSS 3 (Senior Secondary School)</SelectItem>
             </SelectContent>
           </Select>
         </div>

@@ -11,42 +11,78 @@ export type Database = {
     Tables: {
       applications: {
         Row: {
+          academic_info: Json | null
+          additional_info: Json | null
+          application_date: string
           application_name: string
-          created_at: string | null
-          id: number
-          user_id: string | null
+          id: string
+          parent_info: Json | null
+          personal_info: Json | null
+          reviewed_at: string | null
+          reviewed_by: string | null
+          status: string
+          user_id: string
         }
         Insert: {
+          academic_info?: Json | null
+          additional_info?: Json | null
+          application_date?: string
           application_name: string
-          created_at?: string | null
-          id?: never
-          user_id?: string | null
+          id?: string
+          parent_info?: Json | null
+          personal_info?: Json | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string
+          user_id: string
         }
         Update: {
+          academic_info?: Json | null
+          additional_info?: Json | null
+          application_date?: string
           application_name?: string
-          created_at?: string | null
-          id?: never
-          user_id?: string | null
+          id?: string
+          parent_info?: Json | null
+          personal_info?: Json | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string
+          user_id?: string
         }
         Relationships: []
       }
       messages: {
         Row: {
-          created_at: string | null
-          id: number
+          created_at: string
+          email: string
+          id: string
           message_content: string
+          name: string
+          phone: string
+          status: string
+          subject: string
           user_id: string | null
         }
         Insert: {
-          created_at?: string | null
-          id?: never
+          created_at?: string
+          email: string
+          id?: string
           message_content: string
+          name: string
+          phone: string
+          status?: string
+          subject: string
           user_id?: string | null
         }
         Update: {
-          created_at?: string | null
-          id?: never
+          created_at?: string
+          email?: string
+          id?: string
           message_content?: string
+          name?: string
+          phone?: string
+          status?: string
+          subject?: string
           user_id?: string | null
         }
         Relationships: []
@@ -75,30 +111,6 @@ export type Database = {
           status?: string | null
           title?: string
           user_id?: string | null
-        }
-        Relationships: []
-      }
-      replies: {
-        Row: {
-          admin_email: string
-          created_at: string | null
-          id: string
-          message_id: string | null
-          reply_message: string
-        }
-        Insert: {
-          admin_email: string
-          created_at?: string | null
-          id?: string
-          message_id?: string | null
-          reply_message: string
-        }
-        Update: {
-          admin_email?: string
-          created_at?: string | null
-          id?: string
-          message_id?: string | null
-          reply_message?: string
         }
         Relationships: []
       }

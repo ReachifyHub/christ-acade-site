@@ -1,248 +1,125 @@
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Link, useNavigate } from "react-router-dom";
-import { CalendarDays, CheckCircle, Clock, FileText, HelpCircle, Medal } from "lucide-react";
-import PageHeader from "@/components/PageHeader";
-import SectionTitle from "@/components/SectionTitle";
 import Hero from "@/components/Hero";
+import AdmissionInquiryForm from "@/components/admissions/AdmissionInquiryForm";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { CheckCircle2 } from "lucide-react";
 
 const Admissions = () => {
-  const navigate = useNavigate();
-  
-  const handleApplyNow = () => {
-    // Check if user is authenticated
-    const user = localStorage.getItem("user");
-    
-    if (user) {
-      // If user is logged in, navigate directly to the application form
-      navigate("/apply");
-    } else {
-      // If user is not logged in, navigate to login with return URL
-      navigate("/login", { state: { returnUrl: "/apply" } });
-    }
-  };
-
   return (
     <div>
       <Hero
-        title="Join Our Community of Learners"
-        subtitle="Admissions"
-        description="We welcome students who are eager to learn, grow, and contribute to our school community. Our admissions process is designed to ensure a good fit between your child and our educational philosophy."
-        image="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-        buttonText="Apply Now"
-        buttonLink="#"
-        buttonOnClick={handleApplyNow}
+        title="Admissions"
+        subtitle="Join Our Community"
+        description="We welcome students who are eager to learn, grow, and contribute to our vibrant educational community."
+        image="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
         small={true}
       />
 
-      {/* Admissions Process */}
+      {/* Admission Process */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <SectionTitle 
-            title="Our Admissions Process"
-            subtitle="Step by Step"
-          />
-          <div className="max-w-4xl mx-auto">
-            <div className="relative">
-              {/* Vertical Line */}
-              <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-200 md:left-1/2"></div>
-              
-              {/* Step 1 */}
-              <div className="relative mb-12">
-                <div className="flex flex-col md:flex-row items-start">
-                  <div className="flex-1 order-2 md:order-1 md:text-right md:pr-12">
-                    <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Inquiry & School Tour</h3>
-                    <p className="text-gray-600 mb-4">
-                      Begin by exploring our website and submitting an inquiry form. Schedule a campus tour to experience our school culture firsthand and have your initial questions answered.
-                    </p>
-                    <Button asChild variant="outline" size="sm" className="mb-4 md:mb-0">
-                      <Link to="/contact">Schedule a Tour</Link>
-                    </Button>
-                  </div>
-                  <div className="z-10 flex items-center justify-center w-12 h-12 rounded-full bg-school-primary text-white mb-4 md:mb-0 md:mx-4">
-                    <span className="font-bold">1</span>
-                  </div>
-                  <div className="flex-1 order-3 hidden md:block"></div>
-                </div>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-serif font-bold text-school-primary">Our Admission Process</h2>
+            <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+              Our admissions process is designed to be straightforward, 
+              allowing us to get to know your child and ensure they will thrive in our school environment.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-lg shadow-md p-6 text-center">
+              <div className="w-12 h-12 bg-school-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl text-school-primary font-bold">1</span>
               </div>
-              
-              {/* Step 2 */}
-              <div className="relative mb-12">
-                <div className="flex flex-col md:flex-row items-start">
-                  <div className="flex-1 order-2 md:order-1 hidden md:block"></div>
-                  <div className="z-10 flex items-center justify-center w-12 h-12 rounded-full bg-school-primary text-white mb-4 md:mb-0 md:mx-4">
-                    <span className="font-bold">2</span>
-                  </div>
-                  <div className="flex-1 order-3 md:pl-12">
-                    <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Application Submission</h3>
-                    <p className="text-gray-600 mb-4">
-                      Complete and submit the online application form along with the required documents, including academic records from previous schools.
-                    </p>
-                    <Button variant="outline" size="sm" onClick={handleApplyNow}>
-                      Start Application
-                    </Button>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Step 3 */}
-              <div className="relative mb-12">
-                <div className="flex flex-col md:flex-row items-start">
-                  <div className="flex-1 order-2 md:order-1 md:text-right md:pr-12">
-                    <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Entrance Examination</h3>
-                    <p className="text-gray-600 mb-4">
-                      Potential students take our entrance examination, which assesses their readiness for our academic program in line with Nigerian educational standards. The test covers Mathematics, English, and Basic Science.
-                    </p>
-                    <Button asChild variant="outline" size="sm" className="mb-4 md:mb-0">
-                      <Link to="/assessment-details">Examination Details</Link>
-                    </Button>
-                  </div>
-                  <div className="z-10 flex items-center justify-center w-12 h-12 rounded-full bg-school-primary text-white mb-4 md:mb-0 md:mx-4">
-                    <span className="font-bold">3</span>
-                  </div>
-                  <div className="flex-1 order-3 hidden md:block"></div>
-                </div>
-              </div>
-              
-              {/* Step 4 */}
-              <div className="relative mb-12">
-                <div className="flex flex-col md:flex-row items-start">
-                  <div className="flex-1 order-2 md:order-1 hidden md:block"></div>
-                  <div className="z-10 flex items-center justify-center w-12 h-12 rounded-full bg-school-primary text-white mb-4 md:mb-0 md:mx-4">
-                    <span className="font-bold">4</span>
-                  </div>
-                  <div className="flex-1 order-3 md:pl-12">
-                    <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Family Interview</h3>
-                    <p className="text-gray-600 mb-4">
-                      Both parents/guardians and the student meet with our admissions team to discuss educational goals, family values, and how our school can meet your child's needs.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Step 5 */}
-              <div className="relative">
-                <div className="flex flex-col md:flex-row items-start">
-                  <div className="flex-1 order-2 md:order-1 md:text-right md:pr-12">
-                    <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Admissions Decision</h3>
-                    <p className="text-gray-600 mb-4">
-                      Within a few weeks, our admissions committee will make a decision based on all components of the application process and notify you of the outcome.
-                    </p>
-                  </div>
-                  <div className="z-10 flex items-center justify-center w-12 h-12 rounded-full bg-school-primary text-white mb-4 md:mb-0 md:mx-4">
-                    <span className="font-bold">5</span>
-                  </div>
-                  <div className="flex-1 order-3 hidden md:block"></div>
-                </div>
-              </div>
+              <h3 className="text-xl font-medium mb-2">Submit Application</h3>
+              <p className="text-gray-600">
+                Complete our online application form with all required information about your child.
+              </p>
             </div>
+
+            <div className="bg-white rounded-lg shadow-md p-6 text-center">
+              <div className="w-12 h-12 bg-school-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl text-school-primary font-bold">2</span>
+              </div>
+              <h3 className="text-xl font-medium mb-2">Assessment</h3>
+              <p className="text-gray-600">
+                Your child will be invited for an entrance assessment appropriate for their age.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-md p-6 text-center">
+              <div className="w-12 h-12 bg-school-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl text-school-primary font-bold">3</span>
+              </div>
+              <h3 className="text-xl font-medium mb-2">Enrollment</h3>
+              <p className="text-gray-600">
+                Upon acceptance, complete the enrollment process and welcome to our community!
+              </p>
+            </div>
+          </div>
+          
+          <div className="mt-12 text-center">
+            <Button asChild size="lg" className="bg-school-primary hover:bg-school-primary/90">
+              <Link to="/apply">Apply Now</Link>
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Admission Requirements */}
+      {/* Requirements */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <SectionTitle
-                title="Admission Requirements"
-                subtitle="What We Look For"
-                alignment="left"
-              />
-              <p className="text-gray-600 mb-6">
-                At Christ Acade, we seek students who will thrive in our challenging academic environment and contribute positively to our school community. While we consider multiple factors in our admissions decisions, we value:
-              </p>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-school-secondary mr-3 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-semibold text-school-primary">Academic Potential</h4>
-                    <p className="text-gray-600">Students who demonstrate a readiness to engage with our curriculum</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-school-secondary mr-3 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-semibold text-school-primary">Character Development</h4>
-                    <p className="text-gray-600">Evidence of positive character traits and values alignment</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-school-secondary mr-3 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-semibold text-school-primary">Family Involvement</h4>
-                    <p className="text-gray-600">Parents who are committed to an active partnership with the school</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-school-secondary mr-3 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-semibold text-school-primary">Diverse Perspectives</h4>
-                    <p className="text-gray-600">Students who bring unique talents, backgrounds, and interests</p>
-                  </div>
-                </li>
-              </ul>
-              <p className="text-gray-600 italic mb-4">
-                We aim to build a diverse community of learners who will challenge and inspire one another.
-              </p>
-              <Button asChild>
-                <Link to="/admission-requirements">View Full Requirements</Link>
-              </Button>
-            </div>
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="text-xl font-serif font-semibold text-school-primary mb-4">Required Documents</h3>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-serif font-bold text-school-primary">Admission Requirements</h2>
+            <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+              To ensure a smooth admission process, please prepare the following documents.
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-white rounded-lg shadow-md p-8">
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <FileText className="w-5 h-5 text-school-secondary mr-3 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-6 h-6 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold text-school-primary">Completed Application Form</h4>
-                    <p className="text-gray-600 text-sm">All sections must be filled out accurately</p>
+                    <h3 className="font-medium">Completed Application Form</h3>
+                    <p className="text-gray-600">Fill out our comprehensive application form with all required details.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <FileText className="w-5 h-5 text-school-secondary mr-3 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-6 h-6 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold text-school-primary">Academic Records</h4>
-                    <p className="text-gray-600 text-sm">Last 3 terms of school reports/result sheets</p>
+                    <h3 className="font-medium">Birth Certificate</h3>
+                    <p className="text-gray-600">A copy of the child's birth certificate or passport.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <FileText className="w-5 h-5 text-school-secondary mr-3 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-6 h-6 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold text-school-primary">Teacher Recommendations</h4>
-                    <p className="text-gray-600 text-sm">From current Mathematics and English teachers</p>
+                    <h3 className="font-medium">Academic Records</h3>
+                    <p className="text-gray-600">Previous school reports and transcripts from the last two years.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <FileText className="w-5 h-5 text-school-secondary mr-3 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-6 h-6 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold text-school-primary">BECE/NECO/WAEC Results</h4>
-                    <p className="text-gray-600 text-sm">For Senior Secondary School applicants</p>
+                    <h3 className="font-medium">Passport Photographs</h3>
+                    <p className="text-gray-600">Recent passport-sized photographs of the applicant.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <FileText className="w-5 h-5 text-school-secondary mr-3 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-6 h-6 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold text-school-primary">Birth Certificate</h4>
-                    <p className="text-gray-600 text-sm">Copy of the original document</p>
+                    <h3 className="font-medium">Immunization Records</h3>
+                    <p className="text-gray-600">Up-to-date immunization records.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <FileText className="w-5 h-5 text-school-secondary mr-3 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-6 h-6 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold text-school-primary">Immunization Records</h4>
-                    <p className="text-gray-600 text-sm">Up-to-date immunization history</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <FileText className="w-5 h-5 text-school-secondary mr-3 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-semibold text-school-primary">Application Fee</h4>
-                    <p className="text-gray-600 text-sm">Non-refundable fee of ₦10,000</p>
+                    <h3 className="font-medium">Application Fee</h3>
+                    <p className="text-gray-600">Payment of the non-refundable application processing fee.</p>
                   </div>
                 </li>
               </ul>
@@ -251,423 +128,22 @@ const Admissions = () => {
         </div>
       </section>
 
-      {/* Key Dates & Deadlines */}
+      {/* Inquiry Form */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <SectionTitle 
-            title="Admissions Timeline"
-            subtitle="Key Dates & Deadlines"
-          />
-          <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="bg-school-primary p-6 text-white">
-              <h3 className="text-xl font-serif font-bold">2023-2024 Academic Year</h3>
-              <p>Important dates for the upcoming admissions cycle</p>
-            </div>
-            <div className="p-6">
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="bg-school-accent p-3 rounded-lg mr-4 flex-shrink-0">
-                    <CalendarDays className="w-6 h-6 text-school-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-school-primary">September 1, 2023</h4>
-                    <p className="text-gray-600">Applications Open for All Class Levels</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="bg-school-accent p-3 rounded-lg mr-4 flex-shrink-0">
-                    <CalendarDays className="w-6 h-6 text-school-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-school-primary">November 30, 2023</h4>
-                    <p className="text-gray-600">Priority Application Deadline (First Batch)</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="bg-school-accent p-3 rounded-lg mr-4 flex-shrink-0">
-                    <CalendarDays className="w-6 h-6 text-school-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-school-primary">December 15, 2023</h4>
-                    <p className="text-gray-600">First Batch Entrance Examination</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="bg-school-accent p-3 rounded-lg mr-4 flex-shrink-0">
-                    <CalendarDays className="w-6 h-6 text-school-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-school-primary">January 15, 2024</h4>
-                    <p className="text-gray-600">First Batch Admission Notifications</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="bg-school-accent p-3 rounded-lg mr-4 flex-shrink-0">
-                    <CalendarDays className="w-6 h-6 text-school-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-school-primary">March 15, 2024</h4>
-                    <p className="text-gray-600">Second Batch Application Deadline</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="bg-school-accent p-3 rounded-lg mr-4 flex-shrink-0">
-                    <CalendarDays className="w-6 h-6 text-school-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-school-primary">April 15, 2024</h4>
-                    <p className="text-gray-600">Acceptance of Admission & Payment of Fees Due</p>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-8 pt-6 border-t border-gray-200">
-                <div className="flex items-center text-school-primary">
-                  <Clock className="w-5 h-5 mr-2" />
-                  <p className="font-medium">Rolling Admissions</p>
-                </div>
-                <p className="text-gray-600 mt-2">
-                  After March 15, applications are considered on a rolling basis as space allows. We encourage early application as some class levels fill quickly.
-                </p>
-              </div>
-            </div>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-serif font-bold text-school-primary">Inquire About Admissions</h2>
+            <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+              Have questions about our admissions process? Fill out the form below, and our admissions team will get back to you promptly.
+            </p>
           </div>
-        </div>
-      </section>
 
-      {/* Tuition & Financial Aid */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Tuition */}
-            <div>
-              <SectionTitle
-                title="Tuition & Fees"
-                subtitle="Investment in Education"
-                alignment="left"
-              />
-              <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                <div className="p-6">
-                  <p className="text-gray-600 mb-6">
-                    Tuition at Christ Acade Group of School represents an investment in your child's future. Our comprehensive fee structure includes most educational expenses.
-                  </p>
-                  <div className="space-y-4 mb-6">
-                    <div className="border-b border-gray-200 pb-4">
-                      <h4 className="font-semibold text-school-primary mb-2">2023-2024 Annual Tuition</h4>
-                      <div className="flex justify-between">
-                        <span>Primary School (Primary 1-6):</span>
-                        <span className="font-medium">₦350,000</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Junior Secondary (JSS 1-3):</span>
-                        <span className="font-medium">₦450,000</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Senior Secondary (SSS 1-3):</span>
-                        <span className="font-medium">₦550,000</span>
-                      </div>
-                    </div>
-                    <div className="border-b border-gray-200 pb-4">
-                      <h4 className="font-semibold text-school-primary mb-2">New Student Fees</h4>
-                      <div className="flex justify-between">
-                        <span>Application Fee (non-refundable):</span>
-                        <span className="font-medium">₦10,000</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Admission Fee (one-time):</span>
-                        <span className="font-medium">₦50,000</span>
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-school-primary mb-2">Additional Fees</h4>
-                      <div className="flex justify-between">
-                        <span>Books and Supplies:</span>
-                        <span className="font-medium">₦35,000</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Uniform:</span>
-                        <span className="font-medium">₦25,000</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Development Levy:</span>
-                        <span className="font-medium">₦15,000</span>
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-sm text-gray-500 italic mb-4">
-                    * Tuition can be paid per term or annually. A 5% discount is available for full annual payment.
-                  </p>
-                  <Button asChild>
-                    <Link to="/tuition-details">View Full Tuition Details</Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-            
-            {/* Financial Aid */}
-            <div>
-              <SectionTitle
-                title="Scholarships"
-                subtitle="Rewarding Excellence"
-                alignment="left"
-              />
-              <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                <div className="p-6">
-                  <p className="text-gray-600 mb-6">
-                    Christ Acade is committed to making our education accessible to qualified students who demonstrate exceptional academic performance, character, and leadership potential.
-                  </p>
-                  <div className="space-y-4 mb-6">
-                    <div className="flex items-start">
-                      <Medal className="w-5 h-5 text-school-secondary mr-3 mt-1" />
-                      <div>
-                        <h4 className="font-semibold text-school-primary">Academic Merit Scholarships</h4>
-                        <p className="text-gray-600">Available to students who score above 90% in our entrance examination and have outstanding academic records from their previous schools.</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start">
-                      <Medal className="w-5 h-5 text-school-secondary mr-3 mt-1" />
-                      <div>
-                        <h4 className="font-semibold text-school-primary">Sports Scholarships</h4>
-                        <p className="text-gray-600">Awarded to students who demonstrate exceptional talent in sports and can represent the school in state and national competitions.</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start">
-                      <Medal className="w-5 h-5 text-school-secondary mr-3 mt-1" />
-                      <div>
-                        <h4 className="font-semibold text-school-primary">Sibling Discounts</h4>
-                        <p className="text-gray-600">Families with multiple children enrolled receive a 5% discount on tuition for the second child and 10% for additional children.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="bg-gray-50 p-4 rounded-lg mb-6">
-                    <div className="flex items-center mb-2">
-                      <HelpCircle className="w-5 h-5 text-school-primary mr-2" />
-                      <h4 className="font-semibold text-school-primary">How to Apply for Scholarships</h4>
-                    </div>
-                    <ol className="list-decimal pl-5 text-gray-600 space-y-1">
-                      <li>Complete the regular admissions application</li>
-                      <li>Submit the scholarship application form</li>
-                      <li>Provide supporting documents (academic records, certificates, recommendation letters)</li>
-                      <li>Attend a scholarship interview if shortlisted</li>
-                    </ol>
-                  </div>
-                  <Button asChild>
-                    <Link to="/scholarships">Scholarship Details</Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <SectionTitle 
-            title="Frequently Asked Questions"
-            subtitle="Admissions FAQ"
-          />
-          <div className="max-w-3xl mx-auto space-y-6">
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">When should we apply?</h3>
-              <p className="text-gray-600">
-                We recommend applying as early as possible, as some class levels fill quickly. Our priority application deadline for the first batch is November 30, with second batch applications due by March 15. After these dates, we accept applications on a rolling basis as space allows.
-              </p>
-            </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">What age must my child be to enter Primary 1?</h3>
-              <p className="text-gray-600">
-                Children must be 5-6 years old by September 1 of the academic year they are entering Primary 1. We do consider developmental readiness alongside chronological age.
-              </p>
-            </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">How do you make admissions decisions?</h3>
-              <p className="text-gray-600">
-                We take a holistic approach to admissions, considering entrance examination results, academic records, teacher recommendations, family interviews, and how well the student's needs align with our educational program. We seek students who will thrive in our environment and contribute positively to our community.
-              </p>
-            </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Can we visit the school before applying?</h3>
-              <p className="text-gray-600">
-                Yes, we strongly encourage prospective families to tour our campus before applying. This gives you an opportunity to see our facilities, observe classes in session, and get a feel for our school culture. Please contact our Admissions Office to schedule a visit.
-              </p>
-            </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Does the school follow the Nigerian curriculum?</h3>
-              <p className="text-gray-600">
-                Yes, we follow the Nigerian National Curriculum as prescribed by the Federal Ministry of Education. Our students take the BECE at the end of JSS3 and WAEC/NECO examinations at the end of SSS3. We also supplement with additional resources to enhance learning outcomes.
-              </p>
-            </div>
-            <div className="text-center mt-8">
-              <Button asChild variant="outline">
-                <Link to="/admissions-faq">View All FAQs</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA / Contact Section */}
-      <section className="py-16 bg-school-primary text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
-                Have Questions? We're Here to Help
-              </h2>
-              <p className="text-xl text-white/80 mb-8">
-                Our admissions team is ready to assist you through every step of the process. Contact us with any questions or to schedule a campus visit.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-4">
-                    <span className="text-white">📧</span>
-                  </div>
-                  <div>
-                    <h3 className="font-medium">Email</h3>
-                    <a href="mailto:christacadegroupofschool@gmail.com" className="text-white/80 hover:text-white transition-colors">
-                      christacadegroupofschool@gmail.com
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-4">
-                    <span className="text-white">📞</span>
-                  </div>
-                  <div>
-                    <h3 className="font-medium">Phone</h3>
-                    <a href="tel:+2348102473418" className="text-white/80 hover:text-white transition-colors">
-                      +234 810 247 3418
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-4">
-                    <span className="text-white">🕒</span>
-                  </div>
-                  <div>
-                    <h3 className="font-medium">Office Hours</h3>
-                    <p className="text-white/80">
-                      Monday - Friday: 8:00 AM - 4:00 PM
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <h3 className="text-xl font-serif font-semibold text-school-primary mb-6">Send Us a Message</h3>
-              <AdmissionsInquiryForm />
-            </div>
+          <div className="max-w-3xl mx-auto">
+            <AdmissionInquiryForm />
           </div>
         </div>
       </section>
     </div>
-  );
-};
-
-const AdmissionsInquiryForm = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 1500);
-  };
-
-  if (isSubmitted) {
-    return (
-      <div className="text-center py-8">
-        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <CheckCircle className="w-8 h-8 text-green-600" />
-        </div>
-        <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Thank You!</h3>
-        <p className="text-gray-600 mb-4">
-          Your inquiry has been submitted successfully. A member of our admissions team will contact you shortly.
-        </p>
-        <Button onClick={() => setIsSubmitted(false)} variant="outline">
-          Send Another Inquiry
-        </Button>
-      </div>
-    );
-  }
-
-  return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
-            First Name*
-          </label>
-          <Input id="firstName" required />
-        </div>
-        <div>
-          <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
-            Last Name*
-          </label>
-          <Input id="lastName" required />
-        </div>
-      </div>
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-          Email Address*
-        </label>
-        <Input id="email" type="email" required />
-      </div>
-      <div>
-        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-          Phone Number*
-        </label>
-        <Input id="phone" type="tel" required />
-      </div>
-      <div>
-        <label htmlFor="studentName" className="block text-sm font-medium text-gray-700 mb-1">
-          Student Name*
-        </label>
-        <Input id="studentName" required />
-      </div>
-      <div>
-        <label htmlFor="grade" className="block text-sm font-medium text-gray-700 mb-1">
-          Grade Applying For*
-        </label>
-        <select
-          id="grade"
-          className="w-full rounded-md border border-gray-300 p-2 text-gray-900 shadow-sm focus:ring-2 focus:ring-school-primary"
-          required
-        >
-          <option value="">Select a grade...</option>
-          <option value="K">Kindergarten</option>
-          <option value="1">1st Grade</option>
-          <option value="2">2nd Grade</option>
-          <option value="3">3rd Grade</option>
-          <option value="4">4th Grade</option>
-          <option value="5">5th Grade</option>
-          <option value="6">6th Grade</option>
-          <option value="7">7th Grade</option>
-          <option value="8">8th Grade</option>
-          <option value="9">9th Grade</option>
-          <option value="10">10th Grade</option>
-          <option value="11">11th Grade</option>
-          <option value="12">12th Grade</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-          Questions/Comments
-        </label>
-        <Textarea id="message" rows={4} />
-      </div>
-      <div className="pt-2">
-        <Button type="submit" className="w-full bg-school-primary hover:bg-school-primary/90" disabled={isSubmitting}>
-          {isSubmitting ? "Submitting..." : "Submit Inquiry"}
-        </Button>
-      </div>
-    </form>
   );
 };
 
