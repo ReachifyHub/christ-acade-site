@@ -1,5 +1,4 @@
-
-import { MessageSquare, Video } from "lucide-react";
+import { FaWhatsapp, FaTiktok } from "react-icons/fa"; // Import correct icons
 
 const SocialLinks = () => {
   return (
@@ -13,7 +12,7 @@ const SocialLinks = () => {
           className="bg-green-500 text-white p-3 rounded-full hover:bg-green-600 transition-colors"
           aria-label="WhatsApp"
         >
-          <MessageSquare className="w-5 h-5" />
+          <FaWhatsapp className="w-5 h-5" />
         </a>
         <a
           href="https://www.tiktok.com/@christacadegroup"
@@ -22,7 +21,7 @@ const SocialLinks = () => {
           className="bg-black text-white p-3 rounded-full hover:bg-gray-800 transition-colors"
           aria-label="TikTok"
         >
-          <Video className="w-5 h-5" />
+          <FaTiktok className="w-5 h-5" />
         </a>
       </div>
     </div>
