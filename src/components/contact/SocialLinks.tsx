@@ -15,7 +15,7 @@ const SocialLinks = () => {
           <PhoneCall className="w-5 h-5" /> {/* Phone icon for WhatsApp */}
         </a>
         <a
-          href="https://www.tiktok.com/@christacadegroup"
+          href="https://www.tiktok.com/@christacadeschools?_t=ZM-8vBllbGn8b9&_r=1"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-black text-white p-3 rounded-full hover:bg-gray-800 transition-colors"
