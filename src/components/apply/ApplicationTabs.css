@@ -10,6 +10,7 @@
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none; /* Firefox */
+  padding-bottom: 0.5rem;
 }
 
 .application-tabs::-webkit-scrollbar {
@@ -25,6 +26,7 @@
   transition: all 0.2s;
   flex-shrink: 0;
   position: relative;
+  min-width: max-content;
 }
 
 .application-tab:not(.active) {
@@ -36,6 +38,11 @@
   background-color: var(--school-primary, #3b82f6);
 }
 
+/* Add spacing between tabs to prevent overlapping */
+.application-tab + .application-tab {
+  margin-left: 0.25rem;
+}
+
 @media (max-width: 768px) {
   .application-tabs {
     padding-bottom: 0.5rem;
@@ -45,4 +52,10 @@
     padding: 0.5rem 0.75rem;
     font-size: 0.875rem;
   }
+}
+
+/* Add a style for a scrollable container */
+.tabs-container {
+  position: relative;
+  width: 100%;
 }

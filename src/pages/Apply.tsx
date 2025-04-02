@@ -57,7 +57,6 @@ const Apply = () => {
     agreeTerms: false,
   });
 
-  // Mock applications for demonstration
   const applications = [
     {
       id: 1,
@@ -97,12 +96,9 @@ const Apply = () => {
     try {
       const studentName = `${formData.firstName} ${formData.lastName}`;
       
-      // For demonstration, we'll just simulate a successful submission
-      // In a real app, you'd save this to Supabase
       await new Promise(resolve => setTimeout(resolve, 1500));
       
       if (user) {
-        // Save application to Supabase
         const { error } = await supabase
           .from('applications')
           .insert([
