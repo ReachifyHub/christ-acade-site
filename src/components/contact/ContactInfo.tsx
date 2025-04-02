@@ -11,7 +11,7 @@ const ContactInfo = () => {
           <MapPin className="w-5 h-5 text-school-primary mt-1 flex-shrink-0" />
           <div>
             <p className="font-medium">Address</p>
-            <p className="text-gray-600">20 Rumuoparli Avenue, Off Ada George Road, Port Harcourt, Rivers State, Nigeria</p>
+            <p className="text-gray-600">No. 3B Owoeye Street, Ayetoro Area, Osogbo, Osun State</p>
           </div>
         </div>
         
@@ -19,8 +19,7 @@ const ContactInfo = () => {
           <Phone className="w-5 h-5 text-school-primary mt-1 flex-shrink-0" />
           <div>
             <p className="font-medium">Phone</p>
-            <p className="text-gray-600">+234 810 247 3418</p>
-            <p className="text-gray-600">+234 703 426 2624</p>
+            <p className="text-gray-600">08102473418</p>
           </div>
         </div>
         
@@ -29,8 +28,7 @@ const ContactInfo = () => {
           <div>
             <p className="font-medium">Email</p>
             <div className="text-gray-600 break-words">
-              <p>info@christacadegroup.com</p>
-              <p>admissions@christacadegroup.com</p>
+              <p>christacadegroupofschool@gmail.com</p>
             </div>
           </div>
         </div>
