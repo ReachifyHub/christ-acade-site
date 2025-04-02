@@ -68,7 +68,8 @@ export const useApplicationForm = () => {
         personal_info: {
           firstName,
           lastName,
-          dateOfBirth,
+          // Convert Date to ISO string for JSON compatibility
+          dateOfBirth: dateOfBirth ? dateOfBirth.toISOString() : null,
           gender,
           nationality,
           address,
@@ -101,7 +102,7 @@ export const useApplicationForm = () => {
       // Insert to applications table
       const { data, error } = await supabase
         .from('applications')
-        .insert([applicationData]);
+        .insert(applicationData);
 
       if (error) {
         throw error;
