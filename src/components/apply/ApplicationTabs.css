@@ -1,0 +1,48 @@
+
+.application-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 1.5rem;
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+
+.application-tabs::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+.application-tab {
+  padding: 0.75rem 1rem;
+  white-space: nowrap;
+  font-weight: 500;
+  border-radius: 0.25rem 0.25rem 0 0;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.application-tab:not(.active) {
+  color: #6b7280;
+}
+
+.application-tab.active {
+  color: #ffffff;
+  background-color: var(--school-primary, #3b82f6);
+}
+
+@media (max-width: 768px) {
+  .application-tabs {
+    padding-bottom: 0.5rem;
+  }
+  
+  .application-tab {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+}

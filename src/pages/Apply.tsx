@@ -1,35 +1,26 @@
 
-import { useState, useEffect } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useToast } from "@/hooks/use-toast";
-import { useNavigate } from "react-router-dom";
-import PageHeader from "@/components/PageHeader";
-
-// Application components
-import ApplicationStatus from "@/components/apply/ApplicationStatus";
-import ApplicationSuccess from "@/components/apply/ApplicationSuccess";
-import ApplicationNotes from "@/components/apply/ApplicationNotes";
+import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
 import PersonalInfoTab from "@/components/apply/PersonalInfoTab";
 import AcademicInfoTab from "@/components/apply/AcademicInfoTab";
 import ParentInfoTab from "@/components/apply/ParentInfoTab";
 import AdditionalInfoTab from "@/components/apply/AdditionalInfoTab";
-
-// Mock authentication (in a real app, this would be connected to a backend)
-const isAuthenticated = () => {
-  return localStorage.getItem("user") !== null;
-};
+import ApplicationSuccess from "@/components/apply/ApplicationSuccess";
+import ApplicationStatus from "@/components/apply/ApplicationStatus";
+import ApplicationNotes from "@/components/apply/ApplicationNotes";
+import ApplicationTabs from "@/components/apply/ApplicationTabs";
+import { useSupabaseAuth } from "@/hooks/use-supabase-auth";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
+import PageHeader from "@/components/PageHeader";
 
 const Apply = () => {
-  const { toast } = useToast();
-  const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState("personal");
+  const [activeTab, setActiveTab] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [applications, setApplications] = useState<any[]>([]);
-  const [viewMode, setViewMode] = useState<"form" | "status">("form");
-  
+  const [applicationSubmitted, setApplicationSubmitted] = useState(false);
+  const [showStatus, setShowStatus] = useState(false);
+  const { user } = useSupabaseAuth();
   const [formData, setFormData] = useState({
-    // Personal Information
     firstName: "",
     lastName: "",
     email: "",
@@ -39,17 +30,14 @@ const Apply = () => {
     address: "",
     city: "",
     state: "",
-    lga: "", // Added Local Government Area
-    
-    // Academic Information
-    classApplying: "", // Changed from gradeApplying to classApplying
+    zipCode: "",
+    country: "",
+    classApplying: "",
     currentSchool: "",
-    currentClass: "", // Changed from currentGrade to currentClass
+    currentClass: "",
     schoolAddress: "",
     yearsAttended: "",
     reasonForLeaving: "",
-    
-    // Parent/Guardian Information
     parentName1: "",
     parentRelationship1: "",
     parentPhone1: "",
@@ -62,227 +50,181 @@ const Apply = () => {
     parentEmail2: "",
     parentOccupation2: "",
     parentEmployer2: "",
-    
-    // Additional Information
     hobbies: "",
     achievements: "",
     whyChristAcade: "",
     heardAbout: "",
     specialNeeds: "",
-    agreeTerms: false
+    agreeTerms: false,
   });
 
-  // Load applications from localStorage on component mount
-  useEffect(() => {
-    if (!isAuthenticated()) {
-      toast({
-        title: "Authentication Required",
-        description: "Please log in to apply for admission.",
-        variant: "destructive",
-      });
-      navigate("/login", { state: { returnUrl: "/apply" } });
-      return;
+  // Mock applications for demonstration
+  const applications = [
+    {
+      id: 1,
+      studentName: "John Doe",
+      gradeApplying: "JSS 1",
+      submittedAt: "2023-12-15T10:30:00",
+      status: "Pending",
+      email: "john.doe@example.com",
+      formData: {
+        phone: "+234 901 234 5678",
+        currentSchool: "Previous Elementary School",
+        currentGrade: "Primary 6"
+      }
     }
-
-    // Load any existing applications
-    const savedApplications = localStorage.getItem("applications");
-    if (savedApplications) {
-      setApplications(JSON.parse(savedApplications));
-    }
-  }, [navigate, toast]);
+  ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value, type } = e.target as HTMLInputElement;
-    
-    setFormData(prev => ({
-      ...prev,
-      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      // Simulate submission to a backend
-      setTimeout(() => {
-        // Create a new application object
-        const newApplication = {
-          id: Date.now().toString(),
-          studentName: `${formData.firstName} ${formData.lastName}`,
-          email: formData.email,
-          classApplying: formData.classApplying, // Changed from gradeApplying to classApplying
-          submittedAt: new Date().toISOString(),
-          status: "Pending",
-          formData: { ...formData }
-        };
-        
-        // Update applications in state and localStorage
-        const updatedApplications = [...applications, newApplication];
-        setApplications(updatedApplications);
-        localStorage.setItem("applications", JSON.stringify(updatedApplications));
-        
-        setIsSubmitting(false);
-        setIsSubmitted(true);
-        toast({
-          title: "Application Submitted",
-          description: "We've received your application. Our admissions team will contact you soon.",
-          variant: "default",
-        });
-      }, 2000);
-    } catch (error) {
-      setIsSubmitting(false);
-      toast({
-        title: "Submission Failed",
-        description: "There was an error submitting your application. Please try again.",
-        variant: "destructive",
-      });
-    }
+    const { name, value, type } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value,
+    });
   };
 
   const goToNextTab = () => {
-    if (activeTab === "personal") setActiveTab("academic");
-    else if (activeTab === "academic") setActiveTab("parent");
-    else if (activeTab === "parent") setActiveTab("additional");
+    setActiveTab(prevTab => Math.min(prevTab + 1, 3));
   };
 
   const goToPreviousTab = () => {
-    if (activeTab === "additional") setActiveTab("parent");
-    else if (activeTab === "parent") setActiveTab("academic");
-    else if (activeTab === "academic") setActiveTab("personal");
+    setActiveTab(prevTab => Math.max(prevTab - 1, 0));
   };
 
-  if (isSubmitted) {
-    return <ApplicationSuccess onViewStatus={() => setViewMode("status")} />;
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const studentName = `${formData.firstName} ${formData.lastName}`;
+      
+      // For demonstration, we'll just simulate a successful submission
+      // In a real app, you'd save this to Supabase
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      if (user) {
+        // Save application to Supabase
+        const { error } = await supabase
+          .from('applications')
+          .insert([
+            { 
+              application_name: `Application for ${studentName}`,
+              user_id: user.id
+            }
+          ]);
+          
+        if (error) throw error;
+      }
+      
+      toast.success("Application submitted successfully!");
+      setApplicationSubmitted(true);
+    } catch (error: any) {
+      toast.error(error.message || "An error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleViewStatus = () => {
+    setShowStatus(true);
+  };
+
+  const handleNewApplication = () => {
+    setShowStatus(false);
+    setApplicationSubmitted(false);
+    setActiveTab(0);
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      dateOfBirth: "",
+      gender: "",
+      address: "",
+      city: "",
+      state: "",
+      zipCode: "",
+      country: "",
+      classApplying: "",
+      currentSchool: "",
+      currentClass: "",
+      schoolAddress: "",
+      yearsAttended: "",
+      reasonForLeaving: "",
+      parentName1: "",
+      parentRelationship1: "",
+      parentPhone1: "",
+      parentEmail1: "",
+      parentOccupation1: "",
+      parentEmployer1: "",
+      parentName2: "",
+      parentRelationship2: "",
+      parentPhone2: "",
+      parentEmail2: "",
+      parentOccupation2: "",
+      parentEmployer2: "",
+      hobbies: "",
+      achievements: "",
+      whyChristAcade: "",
+      heardAbout: "",
+      specialNeeds: "",
+      agreeTerms: false,
+    });
+  };
+
+  const renderTabContent = () => {
+    switch (activeTab) {
+      case 0:
+        return <PersonalInfoTab formData={formData} handleChange={handleChange} goToNextTab={goToNextTab} />;
+      case 1:
+        return <AcademicInfoTab formData={formData} handleChange={handleChange} goToNextTab={goToNextTab} goToPreviousTab={goToPreviousTab} />;
+      case 2:
+        return <ParentInfoTab formData={formData} handleChange={handleChange} goToNextTab={goToNextTab} goToPreviousTab={goToPreviousTab} />;
+      case 3:
+        return <AdditionalInfoTab formData={formData} handleChange={handleChange} goToPreviousTab={goToPreviousTab} isSubmitting={isSubmitting} />;
+      default:
+        return null;
+    }
+  };
+
+  const tabTitles = ["Personal Info", "Academic Info", "Parent/Guardian Info", "Additional Info"];
+
+  if (applicationSubmitted) {
+    return <ApplicationSuccess onViewStatus={handleViewStatus} />;
+  }
+
+  if (showStatus) {
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <ApplicationStatus applications={applications} onNewApplication={handleNewApplication} />
+      </div>
+    );
   }
 
   return (
     <div>
-      <PageHeader 
-        title="Apply for Admission" 
-        breadcrumbs={[
-          { label: "Home", link: "/" },
-          { label: "Admissions", link: "/admissions" },
-          { label: "Apply" }
-        ]} 
+      <PageHeader
+        title="Apply for Admission"
+        description="Join our vibrant academic community by completing this application form. We look forward to welcoming you to Christ Acade Group of School."
+        image="/assets/images/news1.jpg"
       />
 
-      <div className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-5xl">
-          {/* View Toggle */}
-          <div className="mb-8 flex justify-center">
-            <div className="inline-flex rounded-md shadow-sm">
-              <button
-                type="button"
-                className={`px-4 py-2 text-sm font-medium rounded-l-md ${
-                  viewMode === "form" 
-                    ? "bg-school-primary text-white" 
-                    : "bg-white text-gray-700 hover:bg-gray-50"
-                } border border-school-primary`}
-                onClick={() => setViewMode("form")}
-              >
-                Apply
-              </button>
-              <button
-                type="button"
-                className={`px-4 py-2 text-sm font-medium rounded-r-md ${
-                  viewMode === "status" 
-                    ? "bg-school-primary text-white" 
-                    : "bg-white text-gray-700 hover:bg-gray-50"
-                } border border-l-0 border-school-primary`}
-                onClick={() => setViewMode("status")}
-              >
-                Application Status
-              </button>
-            </div>
-          </div>
-          
-          {viewMode === "status" ? (
-            <div className="bg-white shadow-md rounded-lg overflow-hidden mb-8 p-6">
-              <ApplicationStatus 
-                applications={applications} 
-                onNewApplication={() => setViewMode("form")} 
+      <div className="container mx-auto px-4 py-12">
+        <div className="max-w-4xl mx-auto">
+          <Card>
+            <CardContent className="p-6 md:p-8">
+              <ApplicationTabs 
+                activeTab={activeTab} 
+                onChange={setActiveTab} 
+                tabs={tabTitles} 
               />
-            </div>
-          ) : (
-            <div className="bg-white shadow-md rounded-lg overflow-hidden mb-8">
-              <div className="p-6 bg-school-primary text-white">
-                <h2 className="text-2xl font-serif font-bold">Student Application Form</h2>
-                <p className="text-white/80">Complete all required fields to submit your application</p>
-              </div>
               
-              <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-                {/* Improved responsive tab navigation */}
-                <div className="px-4 sm:px-6 pt-6">
-                  <TabsList className="w-full grid grid-cols-2 sm:grid-cols-4 gap-1">
-                    <TabsTrigger 
-                      value="personal"
-                      className="text-xs sm:text-sm px-1 sm:px-3 py-2 whitespace-normal h-auto min-h-[40px] text-center"
-                    >
-                      Personal Info
-                    </TabsTrigger>
-                    <TabsTrigger 
-                      value="academic"
-                      className="text-xs sm:text-sm px-1 sm:px-3 py-2 whitespace-normal h-auto min-h-[40px] text-center"
-                    >
-                      Academic Info
-                    </TabsTrigger>
-                    <TabsTrigger 
-                      value="parent"
-                      className="text-xs sm:text-sm px-1 sm:px-3 py-2 whitespace-normal h-auto min-h-[40px] text-center"
-                    >
-                      Parent/Guardian
-                    </TabsTrigger>
-                    <TabsTrigger 
-                      value="additional"
-                      className="text-xs sm:text-sm px-1 sm:px-3 py-2 whitespace-normal h-auto min-h-[40px] text-center"
-                    >
-                      Additional Info
-                    </TabsTrigger>
-                  </TabsList>
-                </div>
-                
-                <form onSubmit={handleSubmit}>
-                  <TabsContent value="personal" className="p-6">
-                    <PersonalInfoTab 
-                      formData={formData} 
-                      handleChange={handleChange} 
-                      goToNextTab={goToNextTab} 
-                    />
-                  </TabsContent>
-                  
-                  <TabsContent value="academic" className="p-6">
-                    <AcademicInfoTab 
-                      formData={formData} 
-                      handleChange={handleChange} 
-                      goToNextTab={goToNextTab} 
-                      goToPreviousTab={goToPreviousTab} 
-                    />
-                  </TabsContent>
-                  
-                  <TabsContent value="parent" className="p-6">
-                    <ParentInfoTab 
-                      formData={formData} 
-                      handleChange={handleChange} 
-                      goToNextTab={goToNextTab} 
-                      goToPreviousTab={goToPreviousTab} 
-                    />
-                  </TabsContent>
-                  
-                  <TabsContent value="additional" className="p-6">
-                    <AdditionalInfoTab 
-                      formData={formData} 
-                      handleChange={handleChange} 
-                      goToPreviousTab={goToPreviousTab} 
-                      isSubmitting={isSubmitting} 
-                    />
-                  </TabsContent>
-                </form>
-              </Tabs>
-            </div>
-          )}
-          
+              <form onSubmit={handleSubmit} className="mt-6">
+                {renderTabContent()}
+              </form>
+            </CardContent>
+          </Card>
+
           <ApplicationNotes />
         </div>
       </div>
