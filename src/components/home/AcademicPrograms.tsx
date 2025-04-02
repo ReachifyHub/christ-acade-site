@@ -9,7 +9,7 @@ const AcademicPrograms = () => {
       <div className="container mx-auto px-4">
         <SectionTitle
           title="Our Academic Programs"
-          subtitle="Educational Offerings"
+          subtitle="Nigerian Educational System"
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
@@ -21,9 +21,9 @@ const AcademicPrograms = () => {
               />
             </div>
             <div className="p-6">
-              <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Primary School</h3>
+              <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Primary School (Basic 1-6)</h3>
               <p className="text-gray-600 mb-4">
-                Our primary program builds a strong foundation in core subjects while nurturing creativity and curiosity in young learners.
+                Our primary education provides a strong foundation in literacy, numeracy, and essential life skills following the Nigerian curriculum.
               </p>
               <Button asChild variant="outline" className="w-full">
                 <Link to="/academics">Learn More</Link>
@@ -39,9 +39,9 @@ const AcademicPrograms = () => {
               />
             </div>
             <div className="p-6">
-              <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Junior Secondary School</h3>
+              <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Junior Secondary (JSS 1-3)</h3>
               <p className="text-gray-600 mb-4">
-                Our JSS program helps students navigate the crucial transition years with academic rigor and personal guidance.
+                Our JSS program follows the Nigerian Universal Basic Education curriculum, preparing students for BECE examinations and senior classes.
               </p>
               <Button asChild variant="outline" className="w-full">
                 <Link to="/academics">Learn More</Link>
@@ -57,9 +57,9 @@ const AcademicPrograms = () => {
               />
             </div>
             <div className="p-6">
-              <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Senior Secondary School</h3>
+              <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Senior Secondary (SSS 1-3)</h3>
               <p className="text-gray-600 mb-4">
-                Our SSS program prepares students for WAEC, NECO and university entrance examinations with advanced academics and leadership opportunities.
+                Our SSS program prepares students for WAEC, NECO, and JAMB examinations with specialized subject combinations in Science, Arts, and Commercial tracks.
               </p>
               <Button asChild variant="outline" className="w-full">
                 <Link to="/academics">Learn More</Link>

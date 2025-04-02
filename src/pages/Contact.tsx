@@ -1,5 +1,4 @@
 
-import { useState } from "react";
 import Hero from "@/components/Hero";
 import ContactInfo from "@/components/contact/ContactInfo";
 import SocialLinks from "@/components/contact/SocialLinks";
@@ -13,7 +12,7 @@ const Contact = () => {
       <Hero
         title="Contact Us"
         subtitle="Get In Touch"
-        description="Have a question or need more information? We're here to help. Reach out to us through any of the channels below."
+        description="Have a question or need more information about our Nigerian educational programs? We're here to help. Reach out to us through any of the channels below."
         image="https://images.unsplash.com/photo-1586769852044-692d6e3703f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
         small={true}
       />

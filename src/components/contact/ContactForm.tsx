@@ -22,25 +22,27 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      const messageData = {
+      const inquiryData = {
         name,
         email,
         phone,
         subject,
         message_content: message,
-        user_id: user?.id || null
+        user_id: user?.id || null,
+        created_at: new Date().toISOString(),
+        status: 'new'
       };
 
-      // Store the message in the messages table
+      // Store the inquiry in the inquiries table
       const { error } = await supabase
-        .from('messages')
-        .insert([messageData]);
+        .from('inquiries')
+        .insert([inquiryData]);
 
       if (error) {
         throw error;
       }
 
-      toast.success("Your message has been sent successfully! We'll get back to you soon.");
+      toast.success("Your inquiry has been submitted successfully! We'll get back to you soon.");
       
       // Reset form
       setName("");
@@ -49,7 +51,7 @@ const ContactForm = () => {
       setSubject("");
       setMessage("");
     } catch (error: any) {
-      toast.error(error.message || "There was an error sending your message. Please try again.");
+      toast.error(error.message || "There was an error sending your inquiry. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -89,7 +91,7 @@ const ContactForm = () => {
               id="phone"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              placeholder="+234 XXX XXX XXXX"
+              placeholder="08XXXXXXXXX"
               required
             />
           </div>
@@ -120,7 +122,7 @@ const ContactForm = () => {
           className="bg-school-primary hover:bg-school-primary/90 text-white"
           disabled={isSubmitting}
         >
-          {isSubmitting ? "Sending..." : "Send Message"}
+          {isSubmitting ? "Sending..." : "Submit Inquiry"}
         </Button>
       </form>
     </div>
