@@ -32,7 +32,7 @@ const Gallery = () => {
     },
     {
       id: 4,
-      src: "https://i.ibb.co/QjDgYjkg/IMG-20250402-WA0004.jpg",
+      src: "public/assets/images/science-lab.jpg",
       alt: "Sports activities",
       category: "Sports",
       caption: "Students participating in various sports activities"
@@ -53,7 +53,7 @@ const Gallery = () => {
     },
     {
       id: 7,
-      src: "/assets/images/event1.jpg",
+      src: "https://i.ibb.co/QjDgYjkg/IMG-20250402-WA0004.jpg",
       alt: "Sports day",
       category: "Sports",
       caption: "Inter-house sports competition"
