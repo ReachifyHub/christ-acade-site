@@ -25,21 +25,21 @@ const Gallery = () => {
     },
     {
       id: 3,
-      src: "/assets/images/science-lab.jpg",
+      src: "https://i.ibb.co/zTmx1v7V/IMG-20250402-WA0007.jpg",
       alt: "Science laboratory",
       category: "Academic",
       caption: "Well-equipped science laboratory for practical learning"
     },
     {
       id: 4,
-      src: "/assets/images/sports.jpg",
+      src: "https://i.ibb.co/QjDgYjkg/IMG-20250402-WA0004.jpg",
       alt: "Sports activities",
       category: "Sports",
       caption: "Students participating in various sports activities"
     },
     {
       id: 5,
-      src: "/assets/images/news1.jpg",
+      src: "https://i.ibb.co/Q36xzVdR/IMG-20250402-WA0006.jpg",
       alt: "School event",
       category: "Events",
       caption: "Annual school celebration with cultural performances"
