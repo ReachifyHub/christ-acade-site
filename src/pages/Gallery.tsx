@@ -32,7 +32,7 @@ const Gallery = () => {
     },
     {
       id: 4,
-      src: "public/assets/images/science-lab.jpg",
+      src: "/assets/images/science-lab.jpg",
       alt: "Sports activities",
       category: "Sports",
       caption: "Students participating in various sports activities"
