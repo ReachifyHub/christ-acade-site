@@ -133,20 +133,20 @@ const About = () => {
               <div className="h-64 bg-gray-200">
                 <img
                   src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                  alt="Mr. Aderemi"
+                  alt="Prophet Olamoyesan .A. Aderemi"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-serif font-semibold text-school-primary mb-1">Mr. Aderemi</h3>
-                <p className="text-school-secondary font-medium mb-4">Principal</p>
+                <p className="text-school-secondary font-medium mb-4">Proprietor</p>
                 <p className="text-gray-600 mb-4">
                   Mr. Aderemi brings years of educational leadership experience to Christ Acade. He is dedicated to fostering a culture of academic excellence and holistic development.
                 </p>
                 <div className="border-t border-gray-200 pt-4 mt-4">
                   <p className="text-gray-600 flex items-center">
                     <Mail className="w-4 h-4 mr-2 text-school-primary" />
-                    principal@christacade.edu
+                  
                   </p>
                 </div>
               </div>
@@ -156,13 +156,13 @@ const About = () => {
               <div className="h-64 bg-gray-200">
                 <img
                   src="https://i.ibb.co/dJBwNP1T/IMG-20250402-WA0002.jpg"
-                  alt="Mrs. Olamoyesan"
+                  alt="Mrs. Olamoyesan E.O."
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-serif font-semibold text-school-primary mb-1">Mrs. Olamoyesan</h3>
-                <p className="text-school-secondary font-medium mb-4">Vice Principal</p>
+                <p className="text-school-secondary font-medium mb-4">School Coordinator</p>
                 <p className="text-gray-600 mb-4">
                   Mrs. Olamoyesan oversees academic affairs and student development. She works closely with faculty to ensure high-quality teaching and learning experiences.
                 </p>
