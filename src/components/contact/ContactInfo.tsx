@@ -26,10 +26,12 @@ const ContactInfo = () => {
         
         <div className="flex items-start space-x-3">
           <Mail className="w-5 h-5 text-school-primary mt-1 flex-shrink-0" />
-          <div className="break-words">
+          <div>
             <p className="font-medium">Email</p>
-            <p className="text-gray-600 break-all">info@christacadegroup.com</p>
-            <p className="text-gray-600 break-all">admissions@christacadegroup.com</p>
+            <div className="text-gray-600 break-words">
+              <p>info@christacadegroup.com</p>
+              <p>admissions@christacadegroup.com</p>
+            </div>
           </div>
         </div>
         

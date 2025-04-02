@@ -22,20 +22,27 @@ const AdmissionInquiryForm = () => {
     setIsSubmitting(true);
 
     try {
-      const inquiryData = {
-        name,
-        email,
-        phone,
-        child_name: childName,
-        grade_applying: gradeApplying,
-        question,
-        type: "admission_inquiry"
-      };
+      // Format subject line to include child's name and grade applying for
+      const subject = `Admission Inquiry for ${childName} - ${gradeApplying}`;
+      
+      // Format message content to include all the details
+      const messageContent = `
+Parent/Guardian: ${name}
+Child's Name: ${childName}
+Grade Applying For: ${gradeApplying}
+Question/Message: ${question}
+      `.trim();
 
-      // Store the message in the messages table
+      // Store the message in the messages table with the correct field structure
       const { error } = await supabase
         .from('messages')
-        .insert([inquiryData]);
+        .insert({
+          name,
+          email,
+          phone,
+          subject,
+          message_content: messageContent
+        });
 
       if (error) {
         throw error;
