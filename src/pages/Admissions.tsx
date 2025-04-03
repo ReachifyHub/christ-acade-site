@@ -61,7 +61,7 @@ const Admissions = () => {
           
           <div className="mt-12 text-center">
             <Button asChild size="lg" className="bg-school-primary hover:bg-school-primary/90">
-              <Link to="/apply">Apply Now</Link>
+              <Link to="/contact">Contact Us</Link>
             </Button>
           </div>
         </div>

@@ -1,6 +1,4 @@
 
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import SectionTitle from "@/components/SectionTitle";
 
 const AcademicPrograms = () => {
@@ -25,9 +23,6 @@ const AcademicPrograms = () => {
               <p className="text-gray-600 mb-4">
                 Our primary education provides a strong foundation in literacy, numeracy, and essential life skills following the Nigerian curriculum.
               </p>
-              <Button asChild variant="outline" className="w-full">
-                <Link to="/academics">Learn More</Link>
-              </Button>
             </div>
           </div>
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
@@ -43,9 +38,6 @@ const AcademicPrograms = () => {
               <p className="text-gray-600 mb-4">
                 Our JSS program follows the Nigerian Universal Basic Education curriculum, preparing students for BECE examinations and senior classes.
               </p>
-              <Button asChild variant="outline" className="w-full">
-                <Link to="/academics">Learn More</Link>
-              </Button>
             </div>
           </div>
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
@@ -61,9 +53,6 @@ const AcademicPrograms = () => {
               <p className="text-gray-600 mb-4">
                 Our SSS program prepares students for WAEC, NECO, and JAMB examinations with specialized subject combinations in Science, Arts, and Commercial tracks.
               </p>
-              <Button asChild variant="outline" className="w-full">
-                <Link to="/academics">Learn More</Link>
-              </Button>
             </div>
           </div>
         </div>

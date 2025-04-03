@@ -1,7 +1,5 @@
 
-import { Link } from "react-router-dom";
 import { Calendar } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import SectionTitle from "@/components/SectionTitle";
 
 const NewsEventsSection = () => {
@@ -27,12 +25,9 @@ const NewsEventsSection = () => {
               <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">
                 Students Win National Science Competition
               </h3>
-              <p className="text-gray-600 mb-4 line-clamp-3">
+              <p className="text-gray-600 mb-4">
                 Our senior secondary school science team won first place in the National Science Olympiad, showcasing their exceptional talent and hard work.
               </p>
-              <Button asChild variant="link" className="p-0 text-school-primary">
-                <Link to="/news">Read More</Link>
-              </Button>
             </div>
           </div>
 
@@ -50,12 +45,9 @@ const NewsEventsSection = () => {
               <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">
                 New State-of-the-Art Library Opens
               </h3>
-              <p className="text-gray-600 mb-4 line-clamp-3">
+              <p className="text-gray-600 mb-4">
                 We are excited to announce the opening of our new library, featuring the latest digital resources and learning spaces.
               </p>
-              <Button asChild variant="link" className="p-0 text-school-primary">
-                <Link to="/news">Read More</Link>
-              </Button>
             </div>
           </div>
 
@@ -77,12 +69,9 @@ const NewsEventsSection = () => {
                 <Calendar className="w-4 h-4 mr-2" />
                 <span>July 12, 2025</span>
               </div>
-              <p className="text-gray-600 mb-4 line-clamp-3">
+              <p className="text-gray-600 mb-4">
                 Join us for our Annual Inter-House Sports competition, featuring athletic events, performances, and community activities.
               </p>
-              <Button asChild variant="link" className="p-0 text-school-primary">
-                <Link to="/news">View All Events</Link>
-              </Button>
             </div>
           </div>
         </div>

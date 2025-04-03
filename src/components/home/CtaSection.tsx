@@ -14,10 +14,7 @@ const CtaSection = () => {
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Button asChild size="lg" className="bg-school-secondary hover:bg-school-secondary/90">
-            <Link to="/apply">Apply Now</Link>
-          </Button>
-          <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-school-primary">
-            <Link to="/contact">Schedule a Visit</Link>
+            <Link to="/contact">Contact Us</Link>
           </Button>
         </div>
       </div>

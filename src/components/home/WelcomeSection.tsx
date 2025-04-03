@@ -30,7 +30,7 @@ const WelcomeSection = () => {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <div className="rounded-lg overflow-hidden shadow-md transform translate-y-8">
+            <div className="rounded-lg overflow-hidden shadow-md">
               <img
                 src="/assets/images/campus.jpg"
                 alt="School campus"
@@ -51,7 +51,7 @@ const WelcomeSection = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="rounded-lg overflow-hidden shadow-md transform translate-y-(-8)">
+            <div className="rounded-lg overflow-hidden shadow-md">
               <img
                 src="/assets/images/sports.jpg"
                 alt="Sports activities"
