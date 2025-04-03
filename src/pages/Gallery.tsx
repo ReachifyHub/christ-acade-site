@@ -35,14 +35,14 @@ const Gallery = () => {
       src: "https://i.ibb.co/zTmx1v7V/IMG-20250402-WA0007.jpg",
       alt: "Sports activities",
       category: "Sports",
-      caption: "Our students gather each morning, ready to embrace knowledge and values"
+      caption: "Dedicated professionals shaping the future of our students"
     },
     {
       id: 5,
       src: "https://i.ibb.co/Q36xzVdR/IMG-20250402-WA0006.jpg",
       alt: "School event",
       category: "Events",
-      caption: "Annual school celebration with cultural performances"
+      caption: "Our students gather each morning, ready to embrace knowledge and values"
     },
     {
       id: 6,
