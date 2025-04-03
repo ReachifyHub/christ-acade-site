@@ -236,7 +236,7 @@ const About = () => {
               </div>
               <div className="rounded-lg overflow-hidden shadow-md">
                 <img
-                  src="https://images.unsplash.com/photo-1526906144693-91233e2a3225?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                  src="https://unsplash.com/photos/a-group-of-young-men-playing-a-game-of-basketball-Ecj5_z3cp8M&auto=format&fit=crop&w=1350&q=80"
                   alt="Sports activities"
                   className="w-full h-full object-cover"
                 />
