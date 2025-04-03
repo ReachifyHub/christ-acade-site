@@ -60,14 +60,14 @@ const Gallery = () => {
     },
     {
       id: 8,
-      src: "/assets/images/primary-secondary.jpg",
+      src: "/assets/images/primary-school.jpg",
       alt: "Junior secondary students",
       category: "Academic",
       caption: "Junior secondary students in a collaborative learning session"
     },
     {
       id: 9,
-      src: "/assets/images/secondary-school.jpg",
+      src: "/assets/images/junior-secondary.jpg",
       alt: "Primary school students",
       category: "Academic",
       caption: "Primary school students engaged in an interactive lesson"
