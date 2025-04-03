@@ -20,8 +20,8 @@ const Gallery = () => {
       id: 2,
       src: "/assets/images/classroom.jpeg",
       alt: "Modern classroom",
-      category: "Campus",
-      caption: "Modern classrooms equipped with the latest educational technology"
+      category: "Academic",
+      caption: "Students actively engage in lessons, expanding their knowledge daily"
     },
     {
       id: 3,
@@ -34,14 +34,14 @@ const Gallery = () => {
       id: 4,
       src: "https://i.ibb.co/zTmx1v7V/IMG-20250402-WA0007.jpg",
       alt: "Sports activities",
-      category: "Sports",
+      category: "Campus",
       caption: "Dedicated professionals shaping the future of our students"
     },
     {
       id: 5,
       src: "https://i.ibb.co/Q36xzVdR/IMG-20250402-WA0006.jpg",
       alt: "School event",
-      category: "Events",
+      category: "Academic",
       caption: "Our students gather each morning, ready to embrace knowledge and values"
     },
     {
@@ -63,7 +63,7 @@ const Gallery = () => {
       src: "/assets/images/primary-school.jpg",
       alt: "Junior secondary students",
       category: "Academic",
-      caption: "Junior secondary students in a collaborative learning session"
+      caption: "Modern classrooms equipped with the latest educational technology"
     },
     {
       id: 9,
