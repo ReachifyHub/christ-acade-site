@@ -14,25 +14,25 @@ const Gallery = () => {
       src: "https://i.ibb.co/KxvhL881/2024-07-16.webp",
       alt: "School campus",
       category: "Campus",
-      caption: "Our beautiful main building surrounded by lush gardens"
+      caption: "Our beautiful main building with amazing students and pupils"
     },
     {
       id: 2,
       src: "/assets/images/classroom.jpeg",
       alt: "Modern classroom",
-      category: "Academic",
+      category: "Campus",
       caption: "Modern classrooms equipped with the latest educational technology"
     },
     {
       id: 3,
-      src: "https://i.ibb.co/zTmx1v7V/IMG-20250402-WA0007.jpg",
+      src: "/assets/images/science-lab.jpg",
       alt: "Science laboratory",
       category: "Academic",
       caption: "Well-equipped science laboratory for practical learning"
     },
     {
       id: 4,
-      src: "/assets/images/science-lab.jpg",
+      src: "https://i.ibb.co/zTmx1v7V/IMG-20250402-WA0007.jpg",
       alt: "Sports activities",
       category: "Sports",
       caption: "Students participating in various sports activities"
@@ -60,14 +60,14 @@ const Gallery = () => {
     },
     {
       id: 8,
-      src: "/assets/images/junior-secondary.jpg",
+      src: "/assets/images/primary-secondary.jpg",
       alt: "Junior secondary students",
       category: "Academic",
       caption: "Junior secondary students in a collaborative learning session"
     },
     {
       id: 9,
-      src: "/assets/images/primary-school.jpg",
+      src: "/assets/images/secondary-school.jpg",
       alt: "Primary school students",
       category: "Academic",
       caption: "Primary school students engaged in an interactive lesson"
