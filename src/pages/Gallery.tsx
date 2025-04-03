@@ -14,7 +14,7 @@ const Gallery = () => {
       src: "https://i.ibb.co/KxvhL881/2024-07-16.webp",
       alt: "School campus",
       category: "Campus",
-      caption: "Our beautiful main building with amazing students and pupils"
+      caption: "A well-structured campus designed to inspire and empower the next generation"
     },
     {
       id: 2,
@@ -35,7 +35,7 @@ const Gallery = () => {
       src: "https://i.ibb.co/zTmx1v7V/IMG-20250402-WA0007.jpg",
       alt: "Sports activities",
       category: "Sports",
-      caption: "Students participating in various sports activities"
+      caption: "Our students gather each morning, ready to embrace knowledge and values"
     },
     {
       id: 5,
