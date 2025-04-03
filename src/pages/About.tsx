@@ -149,7 +149,7 @@ const About = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="h-64 bg-gray-200">
                 <img
-                  src="https://i.ibb.co/dJBwNP1/IMG-20250402-WA0002.jpg"
+                  src="https://i.ibb.co/dJBwNP1T/IMG-20250402-WA0002.jpg"
                   alt="Mrs. Olamoyesan E.O."
                   className="w-full h-full object-cover object-center"
                 />
@@ -166,7 +166,7 @@ const About = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="h-64 bg-gray-200">
                 <img
-                  src="https://i.ibb.co/C3PpCww/IMG-20250402-WA0003.jpg"
+                  src="https://i.ibb.co/C3PpCwwn/IMG-20250402-WA0003.jpg"
                   alt="Mrs. Rebecca Adejumo"
                   className="w-full h-full object-cover object-center"
                 />
