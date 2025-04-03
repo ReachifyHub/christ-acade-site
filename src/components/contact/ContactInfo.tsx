@@ -25,10 +25,10 @@ const ContactInfo = () => {
         
         <div className="flex items-start space-x-3">
           <Mail className="w-5 h-5 text-school-primary mt-1 flex-shrink-0" />
-          <div>
+          <div className="w-full">
             <p className="font-medium">Email</p>
             <div className="text-gray-600 break-words">
-              <p>christacadegroupofschool@gmail.com</p>
+              <p className="text-sm sm:text-base">christacadegroupofschool@gmail.com</p>
             </div>
           </div>
         </div>
