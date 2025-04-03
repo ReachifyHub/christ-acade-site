@@ -1,5 +1,4 @@
 
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { BookOpen, GraduationCap, Palette, Globe, Trophy, Clock } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
@@ -76,26 +75,26 @@ const Academics = () => {
         <div className="container mx-auto px-4">
           <SectionTitle 
             title="Our Academic Programs"
-            subtitle="Learning Pathways"
+            subtitle="Nigerian Educational System"
           />
           
-          {/* Elementary School */}
+          {/* Primary School */}
           <div className="bg-white rounded-lg shadow-md overflow-hidden mb-12">
             <div className="grid grid-cols-1 lg:grid-cols-3">
               <div className="bg-school-primary h-auto lg:h-full">
                 <img 
-                  src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
-                  alt="Elementary School" 
+                  src="/assets/images/primary-school.jpg" 
+                  alt="Primary School" 
                   className="w-full h-full object-cover" 
                 />
               </div>
               <div className="col-span-2 p-8">
                 <div className="flex items-center mb-4">
                   <BookOpen className="text-school-primary w-6 h-6 mr-3" />
-                  <h3 className="text-2xl font-serif font-bold text-school-primary">Elementary School (Grades K-5)</h3>
+                  <h3 className="text-2xl font-serif font-bold text-school-primary">Primary School (Basic 1-6)</h3>
                 </div>
                 <p className="text-gray-600 mb-6">
-                  Our elementary program establishes a strong foundation in core academic subjects while fostering creativity, curiosity, and a love of learning. We focus on developing essential skills in reading, writing, mathematics, science, and social studies through engaging, hands-on activities.
+                  Our primary education provides a strong foundation in literacy, numeracy, and essential life skills following the Nigerian curriculum. Students are taught core subjects including Mathematics, English Language, Basic Science and Technology, Religious and National Values, and Cultural and Creative Arts.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                   <div>
@@ -103,19 +102,19 @@ const Academics = () => {
                     <ul className="space-y-1 text-gray-600">
                       <li className="flex items-start">
                         <span className="text-school-secondary mr-2">•</span>
-                        <span>Phonics-based reading instruction</span>
+                        <span>Comprehensive Nigerian curriculum</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-school-secondary mr-2">•</span>
-                        <span>Singapore Math curriculum</span>
+                        <span>Strong focus on literacy and numeracy</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-school-secondary mr-2">•</span>
-                        <span>Hands-on science exploration</span>
+                        <span>Hands-on learning experiences</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-school-secondary mr-2">•</span>
-                        <span>Arts integration across subjects</span>
+                        <span>Character and moral education</span>
                       </li>
                     </ul>
                   </div>
@@ -124,7 +123,7 @@ const Academics = () => {
                     <ul className="space-y-1 text-gray-600">
                       <li className="flex items-start">
                         <span className="text-school-secondary mr-2">•</span>
-                        <span>Language immersion options</span>
+                        <span>Computer studies</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-school-secondary mr-2">•</span>
@@ -132,32 +131,29 @@ const Academics = () => {
                       </li>
                       <li className="flex items-start">
                         <span className="text-school-secondary mr-2">•</span>
-                        <span>Character development</span>
+                        <span>Creative arts and cultural expression</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-school-secondary mr-2">•</span>
-                        <span>Introduction to musical instruments</span>
+                        <span>Sports and physical education</span>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <Button asChild>
-                  <Link to="/elementary-curriculum">View Full Elementary Curriculum</Link>
-                </Button>
               </div>
             </div>
           </div>
           
-          {/* Middle School */}
+          {/* Junior Secondary School */}
           <div className="bg-white rounded-lg shadow-md overflow-hidden mb-12">
             <div className="grid grid-cols-1 lg:grid-cols-3">
               <div className="col-span-2 p-8 order-2 lg:order-1">
                 <div className="flex items-center mb-4">
                   <GraduationCap className="text-school-primary w-6 h-6 mr-3" />
-                  <h3 className="text-2xl font-serif font-bold text-school-primary">Middle School (Grades 6-8)</h3>
+                  <h3 className="text-2xl font-serif font-bold text-school-primary">Junior Secondary School (JSS 1-3)</h3>
                 </div>
                 <p className="text-gray-600 mb-6">
-                  Our middle school program bridges the transition between elementary and high school, offering a balanced curriculum that challenges students academically while supporting their social and emotional development during these formative years.
+                  Our JSS program follows the Nigerian Basic Education Curriculum, preparing students for the Basic Education Certificate Examination (BECE). Students study a wide range of subjects including Mathematics, English, Basic Science, Social Studies, Business Studies, and more.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                   <div>
@@ -165,19 +161,19 @@ const Academics = () => {
                     <ul className="space-y-1 text-gray-600">
                       <li className="flex items-start">
                         <span className="text-school-secondary mr-2">•</span>
-                        <span>Departmentalized instruction</span>
+                        <span>BECE examination preparation</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-school-secondary mr-2">•</span>
-                        <span>Advanced math pathway</span>
+                        <span>Expanded curriculum with specialized subjects</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-school-secondary mr-2">•</span>
-                        <span>Literature-based language arts</span>
+                        <span>Development of critical thinking skills</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-school-secondary mr-2">•</span>
-                        <span>Integrated science curriculum</span>
+                        <span>Introduction to pre-vocational subjects</span>
                       </li>
                     </ul>
                   </div>
@@ -186,15 +182,15 @@ const Academics = () => {
                     <ul className="space-y-1 text-gray-600">
                       <li className="flex items-start">
                         <span className="text-school-secondary mr-2">•</span>
-                        <span>Leadership development</span>
+                        <span>Information and Communication Technology</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-school-secondary mr-2">•</span>
-                        <span>Robotics and coding</span>
+                        <span>Vocational skill development</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-school-secondary mr-2">•</span>
-                        <span>Public speaking workshops</span>
+                        <span>Sports and athletics</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-school-secondary mr-2">•</span>
@@ -203,37 +199,34 @@ const Academics = () => {
                     </ul>
                   </div>
                 </div>
-                <Button asChild>
-                  <Link to="/middle-curriculum">View Full Middle School Curriculum</Link>
-                </Button>
               </div>
               <div className="bg-school-primary h-auto lg:h-full order-1 lg:order-2">
                 <img 
-                  src="https://images.unsplash.com/photo-1577896852618-3b02bc95851c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
-                  alt="Middle School" 
+                  src="/assets/images/junior-secondary.jpg" 
+                  alt="Junior Secondary School" 
                   className="w-full h-full object-cover" 
                 />
               </div>
             </div>
           </div>
           
-          {/* High School */}
+          {/* Senior Secondary School */}
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-3">
               <div className="bg-school-primary h-auto lg:h-full">
                 <img 
-                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
-                  alt="High School" 
+                  src="/assets/images/senior-secondary.jpg" 
+                  alt="Senior Secondary School" 
                   className="w-full h-full object-cover" 
                 />
               </div>
               <div className="col-span-2 p-8">
                 <div className="flex items-center mb-4">
                   <GraduationCap className="text-school-primary w-6 h-6 mr-3" />
-                  <h3 className="text-2xl font-serif font-bold text-school-primary">High School (Grades 9-12)</h3>
+                  <h3 className="text-2xl font-serif font-bold text-school-primary">Senior Secondary School (SSS 1-3)</h3>
                 </div>
                 <p className="text-gray-600 mb-6">
-                  Our high school program prepares students for college and beyond through a rigorous college-preparatory curriculum. We offer a wide range of core courses, electives, honors courses, and Advanced Placement options to challenge students and help them discover their interests and talents.
+                  Our SSS program prepares students for WAEC, NECO, and JAMB examinations with specialized subject combinations in Science, Arts, and Commercial tracks. We provide comprehensive support for university preparation and career guidance.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                   <div>
@@ -241,19 +234,19 @@ const Academics = () => {
                     <ul className="space-y-1 text-gray-600">
                       <li className="flex items-start">
                         <span className="text-school-secondary mr-2">•</span>
-                        <span>Comprehensive college preparation</span>
+                        <span>National examination preparation</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-school-secondary mr-2">•</span>
-                        <span>AP and Honors courses</span>
+                        <span>Subject specialization tracks</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-school-secondary mr-2">•</span>
-                        <span>Advanced research opportunities</span>
+                        <span>University entrance preparation</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-school-secondary mr-2">•</span>
-                        <span>College counseling services</span>
+                        <span>Career counseling services</span>
                       </li>
                     </ul>
                   </div>
@@ -262,26 +255,23 @@ const Academics = () => {
                     <ul className="space-y-1 text-gray-600">
                       <li className="flex items-start">
                         <span className="text-school-secondary mr-2">•</span>
-                        <span>Dual college enrollment</span>
+                        <span>University entrance coaching</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-school-secondary mr-2">•</span>
-                        <span>Business and entrepreneurship</span>
+                        <span>Science and technology projects</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-school-secondary mr-2">•</span>
-                        <span>Fine arts concentration</span>
+                        <span>Leadership development</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-school-secondary mr-2">•</span>
-                        <span>International study opportunities</span>
+                        <span>Career exposure opportunities</span>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <Button asChild>
-                  <Link to="/high-curriculum">View Full High School Curriculum</Link>
-                </Button>
               </div>
             </div>
           </div>
@@ -317,9 +307,9 @@ const Academics = () => {
               description="Our comprehensive athletics program promotes physical fitness, teamwork, leadership, and sportsmanship through competitive and recreational sports."
             />
             <FeatureCard
-              title="Advanced Placement"
+              title="Advanced Learning"
               icon={<GraduationCap className="w-6 h-6" />}
-              description="We offer a wide range of AP courses that challenge high-achieving students and provide the opportunity to earn college credit while in high school."
+              description="We offer advanced learning opportunities for high-achieving students, providing additional challenges and preparation for higher education."
             />
             <FeatureCard
               title="Extended Day Program"
@@ -362,12 +352,9 @@ const Academics = () => {
                 </li>
                 <li className="flex items-start">
                   <span className="text-school-secondary mr-2">•</span>
-                  <span>Executive functioning support</span>
+                  <span>Examination preparation</span>
                 </li>
               </ul>
-              <Button asChild variant="outline">
-                <Link to="/learning-support">Learn More</Link>
-              </Button>
             </div>
             <div>
               <h3 className="text-xl font-serif font-semibold text-school-primary mb-4">Academic Enrichment</h3>
@@ -396,9 +383,6 @@ const Academics = () => {
                   <span>Gifted student services</span>
                 </li>
               </ul>
-              <Button asChild variant="outline">
-                <Link to="/enrichment">Learn More</Link>
-              </Button>
             </div>
           </div>
         </div>
@@ -449,9 +433,9 @@ const Academics = () => {
                     <span>Are committed to the success of each student</span>
                   </li>
                 </ul>
-                <Button asChild>
-                  <Link to="/faculty">Meet Our Faculty</Link>
-                </Button>
+                <Link to="/about" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+                  Meet Our Faculty
+                </Link>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="overflow-hidden rounded-lg">
@@ -498,12 +482,12 @@ const Academics = () => {
             Ready to provide your child with an exceptional education? Learn more about our admission process or schedule a campus tour today.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button asChild size="lg" className="bg-school-secondary hover:bg-school-secondary/90">
-              <Link to="/admissions">Apply for Admission</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-school-primary">
-              <Link to="/contact">Schedule a Visit</Link>
-            </Button>
+            <Link to="/admissions" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium bg-school-secondary hover:bg-school-secondary/90 h-11 rounded-md px-8 text-white">
+              Apply for Admission
+            </Link>
+            <Link to="/contact" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium border border-white text-white hover:bg-white hover:text-school-primary h-11 rounded-md px-8">
+              Schedule a Visit
+            </Link>
           </div>
         </div>
       </section>
