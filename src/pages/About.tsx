@@ -134,7 +134,7 @@ const About = () => {
                 <img
                   src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                   alt="Prophet Olamoyesan A. Aderemi"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
               <div className="p-6">
@@ -149,9 +149,9 @@ const About = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="h-64 bg-gray-200">
                 <img
-                  src="https://i.ibb.co/dJBwNP1T/IMG-20250402-WA0002.jpg"
+                  src="https://i.ibb.co/dJBwNP1/IMG-20250402-WA0002.jpg"
                   alt="Mrs. Olamoyesan E.O."
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
               <div className="p-6">
@@ -166,9 +166,9 @@ const About = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="h-64 bg-gray-200">
                 <img
-                  src="https://i.ibb.co/C3PpCwwn/IMG-20250402-WA0003.jpg"
+                  src="https://i.ibb.co/C3PpCww/IMG-20250402-WA0003.jpg"
                   alt="Mrs. Rebecca Adejumo"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
               <div className="p-6">
@@ -220,14 +220,14 @@ const About = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="rounded-lg overflow-hidden shadow-md translate-y-8">
+              <div className="rounded-lg overflow-hidden shadow-md mt-8">
                 <img
                   src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                   alt="Students working together"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="rounded-lg overflow-hidden shadow-md translate-y-(-8)">
+              <div className="rounded-lg overflow-hidden shadow-md relative -mt-8">
                 <img
                   src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                   alt="Science experiment"
@@ -378,8 +378,5 @@ const About = () => {
     </div>
   );
 };
-
-// Need to import Mail icon for the Leadership Team section
-import { Mail } from "lucide-react";
 
 export default About;
