@@ -22,7 +22,7 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      const inquiryData = {
+      const messageData = {
         name,
         email,
         phone,
@@ -30,19 +30,19 @@ const ContactForm = () => {
         message_content: message,
         user_id: user?.id || null,
         created_at: new Date().toISOString(),
-        status: 'new'
+        status: 'unread'
       };
 
-      // Store the inquiry in the inquiries table
+      // Store the message in the messages table
       const { error } = await supabase
-        .from('inquiries')
-        .insert([inquiryData]);
+        .from('messages')
+        .insert([messageData]);
 
       if (error) {
         throw error;
       }
 
-      toast.success("Your inquiry has been submitted successfully! We'll get back to you soon.");
+      toast.success("Your message has been submitted successfully! We'll get back to you soon.");
       
       // Reset form
       setName("");
@@ -51,7 +51,7 @@ const ContactForm = () => {
       setSubject("");
       setMessage("");
     } catch (error: any) {
-      toast.error(error.message || "There was an error sending your inquiry. Please try again.");
+      toast.error(error.message || "There was an error sending your message. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -122,7 +122,7 @@ const ContactForm = () => {
           className="bg-school-primary hover:bg-school-primary/90 text-white"
           disabled={isSubmitting}
         >
-          {isSubmitting ? "Sending..." : "Submit Inquiry"}
+          {isSubmitting ? "Sending..." : "Submit Message"}
         </Button>
       </form>
     </div>

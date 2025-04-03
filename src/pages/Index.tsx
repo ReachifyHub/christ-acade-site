@@ -16,8 +16,8 @@ const Home = () => {
         subtitle="Welcome to Christ Acade Group of School"
         description="We provide a comprehensive education that fosters academic excellence, character development, and spiritual growth in a nurturing environment."
         image="assets/images/hero-image.jpg"
-        buttonText="Apply Now"
-        buttonLink="/apply"
+        buttonText="Contact Us"
+        buttonLink="/contact"
       />
 
       {/* Welcome Section */}
