@@ -23,10 +23,10 @@ const NewsEventsSection = () => {
             <div className="p-6">
               <div className="text-sm text-gray-500 mb-2">June 15, 2025</div>
               <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">
-                Students Win National Science Competition
+                Students Excel in WAEC Examination
               </h3>
               <p className="text-gray-600 mb-4">
-                Our senior secondary school science team won first place in the National Science Olympiad, showcasing their exceptional talent and hard work.
+                Our senior secondary school students achieved outstanding results in the West African Examinations Council (WAEC) exams, with 95% scoring distinctions in core subjects.
               </p>
             </div>
           </div>
@@ -43,10 +43,10 @@ const NewsEventsSection = () => {
             <div className="p-6">
               <div className="text-sm text-gray-500 mb-2">May 28, 2025</div>
               <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">
-                New State-of-the-Art Library Opens
+                New Computer Laboratory Opens
               </h3>
               <p className="text-gray-600 mb-4">
-                We are excited to announce the opening of our new library, featuring the latest digital resources and learning spaces.
+                We are proud to announce the opening of our new computer laboratory, equipped with modern facilities to enhance ICT education for all students.
               </p>
             </div>
           </div>
@@ -63,14 +63,14 @@ const NewsEventsSection = () => {
             <div className="p-6">
               <div className="text-sm text-school-secondary font-medium mb-2">Upcoming Event</div>
               <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">
-                Annual Inter-House Sports
+                Annual Inter-House Sports Competition
               </h3>
               <div className="flex items-center text-gray-600 mb-4">
                 <Calendar className="w-4 h-4 mr-2" />
                 <span>July 12, 2025</span>
               </div>
               <p className="text-gray-600 mb-4">
-                Join us for our Annual Inter-House Sports competition, featuring athletic events, performances, and community activities.
+                Join us for our Annual Inter-House Sports competition, featuring athletics, football, and traditional Nigerian games and cultural performances.
               </p>
             </div>
           </div>
