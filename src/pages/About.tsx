@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { BookOpen, Users, Heart, Target, Clock, Award } from "lucide-react";
@@ -149,7 +150,7 @@ const About = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="h-64 bg-gray-200">
                 <img
-                  src="https://i.ibb.co/dJBwNP1T/IMG-20250402-WA0002.jpg"
+                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                   alt="Mrs. Olamoyesan E.O."
                   className="w-full h-full object-cover object-center"
                 />
@@ -166,7 +167,7 @@ const About = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="h-64 bg-gray-200">
                 <img
-                  src="https://i.ibb.co/C3PpCwwn/IMG-20250402-WA0003.jpg"
+                  src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                   alt="Mrs. Rebecca Adejumo"
                   className="w-full h-full object-cover object-center"
                 />
@@ -227,16 +228,16 @@ const About = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="rounded-lg overflow-hidden shadow-md relative -mt-8">
+              <div className="rounded-lg overflow-hidden shadow-md">
                 <img
                   src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                   alt="Science experiment"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="rounded-lg overflow-hidden shadow-md">
+              <div className="rounded-lg overflow-hidden shadow-md mt-8">
                 <img
-                  src="https://unsplash.com/photos/a-group-of-girls-playing-a-game-of-volleyball-aCEfaM9zRTU"
+                  src="https://images.unsplash.com/photo-1576976201807-a5fdb4a95ace?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                   alt="Sports activities"
                   className="w-full h-full object-cover"
                 />
