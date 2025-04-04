@@ -27,7 +27,7 @@ const ApplicationNotes = () => {
             </li>
             <li className="flex items-start">
               <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
-              <span>Complete enrollment by paying the acceptance fee (₦25,000) if admitted</span>
+              <span>Complete enrollment by paying the acceptance fee if admitted</span>
             </li>
           </ul>
         </div>

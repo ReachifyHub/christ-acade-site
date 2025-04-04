@@ -115,13 +115,6 @@ const Admissions = () => {
                     <p className="text-gray-600">Up-to-date immunization records.</p>
                   </div>
                 </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-medium">Application Fee</h3>
-                    <p className="text-gray-600">Payment of the non-refundable application processing fee.</p>
-                  </div>
-                </li>
               </ul>
             </div>
           </div>
