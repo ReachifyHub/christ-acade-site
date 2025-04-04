@@ -261,9 +261,9 @@ const About = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="h-48 bg-gray-200">
                 <img
-                  src="https://images.unsplash.com/photo-1588772446665-403fdadb4d31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                  src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                   alt="Classrooms"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
               <div className="p-6">
@@ -279,7 +279,7 @@ const About = () => {
                 <img
                   src="https://images.unsplash.com/photo-1568667256549-094345857637?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                   alt="Science Labs"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
               <div className="p-6">
@@ -295,7 +295,7 @@ const About = () => {
                 <img
                   src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                   alt="Library"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
               <div className="p-6">
@@ -309,15 +309,15 @@ const About = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="h-48 bg-gray-200">
                 <img
-                  src="https://images.unsplash.com/photo-1511205315861-8af54712680b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                  src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                   alt="Computer Lab"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-serif font-semibold text-school-primary mb-2">Computer Labs</h3>
                 <p className="text-gray-600">
-                  Our computer labs are equipped with the latest hardware and software, providing students with essential technology skills.
+                  Our computer labs are equipped with the latest hardware and software, providing students with essential technology skills for the Nigerian educational system.
                 </p>
               </div>
             </div>
@@ -327,7 +327,7 @@ const About = () => {
                 <img
                   src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                   alt="Sports Facilities"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
               <div className="p-6">
@@ -343,7 +343,7 @@ const About = () => {
                 <img
                   src="https://images.unsplash.com/photo-1595113316349-9fa4eb24f884?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                   alt="Arts Studios"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
               <div className="p-6">
