@@ -55,7 +55,7 @@ const Gallery = () => {
       id: 7,
       src: "https://i.ibb.co/QjDgYjkg/IMG-20250402-WA0004.jpg",
       alt: "Sports day",
-      category: "Sports",
+      category: "Academic",
       caption: "Inter-house sports competition"
     },
     {
@@ -72,8 +72,22 @@ const Gallery = () => {
       category: "Academic",
       caption: "Primary school students engaged in an interactive lesson"
     },
+    {
+      id:10,
+      src:"https://i.ibb.co/Lzgg76kp/IMG-20250404-WA0000.jpg",
+      alt:"Inter-house sports day",
+      category:"Sports",
+      caption:"The backbone of our school—our incredible staff—celebrating the energy and passion of Inter-House Sports Day"
+    },
+    {
+      id:11,
+      src:"https://i.ibb.co/Vc2hZXzt/IMG-20250404-WA0001.jpg",
+      alt:"inter house sports",
+      category:"Sports",
+      caption:"Champions of the field! Green House secures first place, proving that hard work, perseverance, and teamwork lead to success"
+    },  
+      
   ];
-
   const filteredImages = activeFilter === "All" 
     ? images 
     : images.filter(image => image.category === activeFilter);
