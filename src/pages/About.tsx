@@ -122,77 +122,78 @@ const About = () => {
       </section>
 
       {/* Leadership Team */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <SectionTitle
-            title="Our Leadership Team"
-            subtitle="Meet Our Staff"
+<section className="py-16 bg-gray-50">
+  <div className="container mx-auto px-4">
+    <SectionTitle
+      title="Our Leadership Team"
+      subtitle="Meet Our Staff"
+    />
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+        <div className="min-h-84 h-auto">
+          <img
+            src="https://i.ibb.co/39xY22BF/IMG-20250407-WA0000.jpg"
+            alt="Prophet Olamoyesan A. Aderemi"
+            className="w-full h-full object-contain"
+            style={{
+              aspectRatio: 'auto',
+              maxHeight: '500px'
+            }}
+            onError={(e) => {
+              console.error('Image failed to load');
+              e.target.style.display = 'none';
+            }}
           />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-  <div className="bg-white rounded-lg shadow-md overflow-hidden">
-    <div className="min-h-84 h-auto">
-      <img
-        src="https://i.ibb.co/39xY22BF/IMG-20250407-WA0000.jpg"
-        alt="Prophet Olamoyesan A. Aderemi"
-        className="w-full h-full object-contain"
-        style={{
-          aspectRatio: 'auto',
-          maxHeight: '500px'
-        }}
-        onError={(e) => {
-          console.error('Image failed to load');
-          e.target.style.display = 'none';
-        }}
-      />
+        </div>
+        <div className="p-6">
+          <h3 className="text-xl font-serif font-semibold text-school-primary mb-1">Prophet Olamoyesan A. Aderemi</h3>
+          <p className="text-school-secondary font-medium mb-4">Proprietor</p>
+          <p className="text-gray-600 mb-4">
+            Prophet Olamoyesan brings years of educational leadership experience to Christ Acade. He is dedicated to fostering a culture of academic excellence and holistic development.
+          </p>
+        </div>
+      </div>
+      
+      {/* Rest of the leadership team members */}
+      {/* Second team member */}
+      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+        <div className="h-64 bg-gray-200">
+          <img
+            src="https://i.ibb.co/dJBwNP1T/IMG-20250402-WA0002.jpg"
+            alt="Mrs. Olamoyesan E.O."
+            className="w-full h-full object-cover object-center"
+          />
+        </div>
+        <div className="p-6">
+          <h3 className="text-xl font-serif font-semibold text-school-primary mb-1">Mrs. Olamoyesan E.O.</h3>
+          <p className="text-school-secondary font-medium mb-4">School Coordinator</p>
+          <p className="text-gray-600 mb-4">
+            Mrs. Olamoyesan oversees academic affairs and student development. She works closely with faculty to ensure high-quality teaching and learning experiences.
+          </p>
+        </div>
+      </div>
+      
+      {/* Third team member */}
+      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+        <div className="h-64 bg-gray-200">
+          <img
+            src="https://i.ibb.co/C3PpCwwn/IMG-20250402-WA0003.jpg"
+            alt="Mrs. Rebecca Adejumo"
+            className="w-full h-full object-cover object-center"
+          />
+        </div>
+        <div className="p-6">
+          <h3 className="text-xl font-serif font-semibold text-school-primary mb-1">Mrs. Rebecca Adejumo</h3>
+          <p className="text-school-secondary font-medium mb-4">HOS</p>
+          <p className="text-gray-600 mb-4">
+            Mrs. Rebecca Adejumo coordinates staff development and administrative functions. She ensures the smooth operation of school activities and programs.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-              <div className="p-6">
-                <h3 className="text-xl font-serif font-semibold text-school-primary mb-1">Prophet Olamoyesan A. Aderemi</h3>
-                <p className="text-school-secondary font-medium mb-4">Proprietor</p>
-                <p className="text-gray-600 mb-4">
-                  Prophet Olamoyesan brings years of educational leadership experience to Christ Acade. He is dedicated to fostering a culture of academic excellence and holistic development.
-                </p>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-64 bg-gray-200">
-                <img
-                  src="https://i.ibb.co/dJBwNP1T/IMG-20250402-WA0002.jpg"
-                  alt="Mrs. Olamoyesan E.O."
-                  className="w-full h-full object-cover object-center"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-serif font-semibold text-school-primary mb-1">Mrs. Olamoyesan E.O.</h3>
-                <p className="text-school-secondary font-medium mb-4">School Coordinator</p>
-                <p className="text-gray-600 mb-4">
-                  Mrs. Olamoyesan oversees academic affairs and student development. She works closely with faculty to ensure high-quality teaching and learning experiences.
-                </p>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-64 bg-gray-200">
-                <img
-                  src="https://i.ibb.co/C3PpCwwn/IMG-20250402-WA0003.jpg"
-                  alt="Mrs. Rebecca Adejumo"
-                  className="w-full h-full object-cover object-center"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-serif font-semibold text-school-primary mb-1">Mrs. Rebecca Adejumo</h3>
-                <p className="text-school-secondary font-medium mb-4">HOS</p>
-                <p className="text-gray-600 mb-4">
-                  Mrs. Rebecca Adejumo coordinates staff development and administrative functions. She ensures the smooth operation of school activities and programs.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+</section>
+      
       {/* Our Approach */}
       <section className="py-16">
         <div className="container mx-auto px-4">
