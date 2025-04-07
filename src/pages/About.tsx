@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { BookOpen, Users, Heart, Target, Clock, Award } from "lucide-react";
@@ -133,7 +132,7 @@ const About = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="h-64 bg-gray-200">
                 <img
-                  src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                  src="https://i.ibb.co/0jfTkCgp/IMG-20250407-WA0000.jpg"
                   alt="Prophet Olamoyesan A. Aderemi"
                   className="w-full h-full object-cover object-center"
                 />
