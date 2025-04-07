@@ -129,14 +129,24 @@ const About = () => {
             subtitle="Meet Our Staff"
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-64 bg-gray-200">
-                <img
-                  src="https://i.ibb.co/39xY22BF/IMG-20250407-WA0000.jpg"
-                  alt="Prophet Olamoyesan A. Aderemi"
-                  className="w-full h-full object-cover object-center"
-                />
-              </div>
+  <div className="bg-white rounded-lg shadow-md overflow-hidden">
+    <div className="min-h-64 h-auto">
+      <img
+        src="https://i.ibb.co/39xY22BF/IMG-20250407-WA0000.jpg"
+        alt="Prophet Olamoyesan A. Aderemi"
+        className="w-full h-full object-contain"
+        style={{
+          aspectRatio: 'auto',
+          maxHeight: '400px'
+        }}
+        onError={(e) => {
+          console.error('Image failed to load');
+          e.target.style.display = 'none';
+        }}
+      />
+    </div>
+  </div>
+</div>
               <div className="p-6">
                 <h3 className="text-xl font-serif font-semibold text-school-primary mb-1">Prophet Olamoyesan A. Aderemi</h3>
                 <p className="text-school-secondary font-medium mb-4">Proprietor</p>
