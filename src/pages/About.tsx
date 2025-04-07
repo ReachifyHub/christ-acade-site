@@ -132,7 +132,7 @@ const About = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="h-64 bg-gray-200">
                 <img
-                  src="https://i.ibb.co/0jfTkCgp/IMG-20250407-WA0000.jpg"
+                  src="https://i.ibb.co/39xY22BF/IMG-20250407-WA0000.jpg"
                   alt="Prophet Olamoyesan A. Aderemi"
                   className="w-full h-full object-cover object-center"
                 />
