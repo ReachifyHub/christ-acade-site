@@ -141,7 +141,8 @@ const About = () => {
             }}
             onError={(e) => {
               console.error('Image failed to load');
-              e.target.style.display = 'none';
+              const target = e.target as HTMLImageElement;
+              target.style.display = 'none';
             }}
           />
         </div>
